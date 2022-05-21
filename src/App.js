@@ -2,8 +2,10 @@ import './App.css';
 
 function App() {
   return (
-    <h1>Movies</h1>
-  );
+    <div><h1>Movies</h1>
+    <h2>Aaaaaaa</h2>
+  </div>
+    )
 }
 
 export default App;
