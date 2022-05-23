@@ -6,8 +6,10 @@ function Header() {
     <div className={classes.header}>
       <Link to="/home">
         <div className={classes.logo}>Movie app</div>
-     
       </Link>
+    <Link to ="/aboutUs">
+      <div className={classes.aboutUs}>About Us</div>
+    </Link>
       <div className={classes.userLogo}>
         <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#"/>
       </div>
