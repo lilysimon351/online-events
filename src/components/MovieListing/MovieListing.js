@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { baseUrl } from '../../API/Api'
 import classes from "./MovieListing.module.css"
 import { Link } from 'react-router-dom'
+import MovieCard from '../MovieCard/MovieCard'
 
 function MovieListing() {
     const [movies,setMovies]=useState([])
@@ -23,13 +24,7 @@ function MovieListing() {
       {
           movies.map((movie)=>{
               return (
-                <Link to="/card" >
-                  <div  className={classes.movieItem} >
-                      <img className={classes.image} src={movie.url} alt={movie.title} />
-                      <h2>{movie.title} {movie.date}</h2>
-                      <h2>{movie.count}</h2>   
-                  </div>
-                   </Link>
+                  <MovieCard movie={movie} key={movie.id} />
               )
           })
       }

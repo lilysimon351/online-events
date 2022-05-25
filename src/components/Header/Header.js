@@ -4,7 +4,7 @@ import classes from "./Header.module.css"
 function Header() {
   return (
     <div className={classes.header}>
-      <Link to="/home">
+      <Link to="/">
         <div className={classes.logo}>Movie app</div>
       </Link>
     <Link to ="/aboutUs">

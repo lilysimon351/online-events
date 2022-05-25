@@ -2,15 +2,25 @@
     "users": [
         {
           "id": "1",
-          "name": "Hayk"
+          "name": "Hayk",
+          "role": "admin",
+          "username": "admin",
+          "password": "admin",
+          "mail": "admin@mail.com"
         },
         {
           "id": "2",
-          "name": "Karen"
+          "name": "Karen",
+          "username": "karen",
+          "password": "admin",
+          "mail": "karen@mail.com"
         },
         {
           "id": "3",
-          "name": "Alex"
+          "name": "Alex",
+          "username": "alex",
+          "password": "admin",
+          "mail": "alex@mail.com"
         }
       ],
       "movies": [
