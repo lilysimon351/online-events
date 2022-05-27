@@ -28,6 +28,13 @@
       "password": "11111",
       "mail": "yegor@mail.ru",
       "id": "qB0cUCT"
+    },
+    {
+      "name": "Vahag",
+      "username": "vahag",
+      "password": "2222",
+      "mail": "vahag@mail.com",
+      "id": "fGhDja2"
     }
   ],
   "movies": [
