@@ -1,60 +1,84 @@
 {
-    "users": [
-        {
-          "id": "1",
-          "name": "Hayk"
-        },
-        {
-          "id": "2",
-          "name": "Karen"
-        },
-        {
-          "id": "3",
-          "name": "Alex"
-        }
-      ],
-      "movies": [
-        {
-          "id": "1",
-          "url":"https://terrigen-cdn-dev.marvel.com/content/prod/1x/blackwidow_lob_crd_06.jpg",
-          "count":"1000 AMD",
-          "title":"Black Widow",
-          "date":"25.05.2022"
-        },
-        {
-            "id": "2",
-            "url":"https://lumiere-a.akamaihd.net/v1/images/p_avengersendgame_19751_e14a0104.jpeg?region=0,0,540,810&width=480",
-            "count":"1000 AMD",
-            "title":"Avengers end game",
-            "date":"29.05.2022"
-          },
-          {
-              "id": "3",
-              "url":"https://www.kinofilms.ua/images/photos/w680/767765.jpg",
-              "count":"1000 AMD",
-              "title":"Captain Marvel",
-              "date":"29.05.2022"
-            },
-            {
-                "id": "4",
-                "url":"https://img.favpng.com/12/12/1/universal-pictures-film-poster-film-poster-universal-monsters-cinematic-universe-png-favpng-MJK8X7NTx9tZaSktYeAvvdfkY.jpg",
-                "count":"1000 AMD",
-                "title":"Tom cruise the Mummy",
-                "date":"29.05.2022"
-              },
-              {
-                  "id": "5",
-                  "url":"https://www.universalstudios.com/uploads/18815.png",
-                  "count":"1000 AMD",
-                  "title":"The Kings Daugther",
-                  "date":"29.05.2022"
-                },
-                {
-                    "id": "6",
-                    "url":"https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/6/8/5/8356586/acb59318c76683bf3dcb8b7d5e86c7c6.jpg",
-                    "count":"1000 AMD",
-                    "title":"Spider-Man",
-                    "date":"29.05.2022"
-                  }
-      ]
+  "users": [
+    {
+      "id": "1",
+      "name": "Hayk",
+      "role": "admin",
+      "username": "admin",
+      "password": "admin",
+      "mail": "admin@mail.com"
+    },
+    {
+      "id": "2",
+      "name": "Karen",
+      "username": "karen",
+      "password": "admin",
+      "mail": "karen@mail.com"
+    },
+    {
+      "id": "3",
+      "name": "Alex",
+      "username": "alex",
+      "password": "admin",
+      "mail": "alex@mail.com"
+    },
+    {
+      "name": "Yegor",
+      "username": "yegor",
+      "password": "11111",
+      "mail": "yegor@mail.ru",
+      "id": "qB0cUCT"
+    },
+    {
+      "name": "Vahag",
+      "username": "vahag",
+      "password": "2222",
+      "mail": "vahag@mail.com",
+      "id": "fGhDja2"
+    }
+  ],
+  "movies": [
+    {
+      "id": "1",
+      "url": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/blackwidow_lob_crd_06.jpg",
+      "count": "1000 AMD",
+      "title": "Black Widow",
+      "date": "25.05.2022"
+    },
+    {
+      "id": "2",
+      "url": "https://lumiere-a.akamaihd.net/v1/images/p_avengersendgame_19751_e14a0104.jpeg?region=0,0,540,810&width=480",
+      "count": "1000 AMD",
+      "title": "Avengers end game",
+      "date": "29.05.2022"
+    },
+    {
+      "id": "3",
+      "url": "https://www.kinofilms.ua/images/photos/w680/767765.jpg",
+      "count": "1000 AMD",
+      "title": "Captain Marvel",
+      "date": "29.05.2022"
+    },
+    {
+      "id": "4",
+      "url": "https://img.favpng.com/12/12/1/universal-pictures-film-poster-film-poster-universal-monsters-cinematic-universe-png-favpng-MJK8X7NTx9tZaSktYeAvvdfkY.jpg",
+      "count": "1000 AMD",
+      "title": "Tom cruise the Mummy",
+      "date": "29.05.2022"
+    },
+    {
+      "id": "5",
+      "url": "https://www.universalstudios.com/uploads/18815.png",
+      "count": "1000 AMD",
+      "title": "The Kings Daugther",
+      "date": "29.05.2022"
+    },
+    {
+      "id": "6",
+      "url": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/6/8/5/8356586/acb59318c76683bf3dcb8b7d5e86c7c6.jpg",
+      "count": "1000 AMD",
+      "title": "Spider-Man",
+      "date": "29.05.2022"
+    }
+  ]
 }

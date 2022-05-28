@@ -1,0 +1,11 @@
+.movieItem {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1% 20px 0;
+    border:2px solid black
+}
+
+.movieItem img {
+    width: 100%;
+    
+}
