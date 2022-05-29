@@ -2,7 +2,11 @@
     background-color: rgb(4, 6, 41);
     width: 100%;
     height: 10vh;
+<<<<<<< HEAD
     padding: 0px 40px;
+=======
+    padding: 0px 3px;
+>>>>>>> 9beae30245ce5f80c8dae34eef28bd181c2fe80d
     display: flex;
     align-items: center;
     justify-content: space-around;
