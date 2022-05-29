@@ -11,7 +11,7 @@ const Header = () => {
   const[langOption, setLangOption]= useState(LANGUAGES[0])
   
     const { user, setUser } = useUserInfo()
-  const logout = () => {
+    const logout = () => {
       localStorage.removeItem('user')
       sessionStorage.removeItem('user')
       setUser(null)
@@ -19,10 +19,10 @@ const Header = () => {
 
     const {t,changeLanguage} = useTranslate()
   
-    const handleChangeLang = e => {
-      setLangOption(e.target.value)
-      changeLanguage(e.target.value)
-    }
+  const handleChangeLang = e => {
+    setLangOption(e.target.value)
+    changeLanguage(e.target.value)
+  }
   
     return (
       <header className={classes.header}>
@@ -35,7 +35,7 @@ const Header = () => {
               return (
                 <li key={link.to}> 
                   <NavLink
-                    className={({ isActive }) => classNames(classes.link, {
+                    className={({isActive}) => classNames(classes.link, {
                       [classes.active]: isActive
                     })}
                     to={link.to}
@@ -45,15 +45,14 @@ const Header = () => {
             })
           }
         </ul>
-
-         {
-            user && (
-              <div className={classes.headerInfo}>
-                <div className={classes.logo}>{user}</div>
-                <button className={classes.link} onClick={logout}>{t('log Out')}</button>
-              </div>
-                )
-            }
+        {/* {
+          user && (
+            <div className={classes.headerInfo}>
+               <div className={classes.logo}>{user}</div>
+               <button className={classes.link} onClick={logout}>{t('log Out')}</button>
+             </div>
+          )
+        } */}
         {
           user &&
           <div className={classes.userLogo}>
@@ -62,7 +61,7 @@ const Header = () => {
         }
      
         {
-          user && <input type='button' onClick={logout} value='LOG OUT'/>
+          user && <input type='button' onClick={t(logout)} value='LOG OUT'/>
         }
         <select value={langOption} onChange={handleChangeLang}>
           <option value="AM">{t('armenian')}</option>
