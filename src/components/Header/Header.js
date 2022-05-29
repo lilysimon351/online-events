@@ -50,7 +50,7 @@ const Header = () => {
             user && (
               <div className={classes.headerInfo}>
                 <div className={classes.logo}>{user}</div>
-                <button className={classes.link} onClick={logout}>{t('logOut')}</button>
+                <button className={classes.link} onClick={logout}>{t('log Out')}</button>
               </div>
                 )
             }
@@ -62,7 +62,7 @@ const Header = () => {
         }
      
         {
-          user && <input type='button' onClick={logout} value='LOG OUT' />
+          user && <input type='button' onClick={logout} value='LOG OUT'/>
         }
         <select value={langOption} onChange={handleChangeLang}>
           <option value="AM">{t('armenian')}</option>
