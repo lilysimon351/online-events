@@ -20,9 +20,9 @@ function MovieDetail() {
     <div>
       <h1>{movie.title}</h1>
       <button>To favorites</button> 
-      <img src={movie.url} alt={movie.title} />
+      <img src={movie.posterUrl} alt={movie.title} />
       <p>Date: {movie.date}</p>
-      <p>Ticket: {movie.count} </p>
+      <p>Ticket: {movie.ticketPrice} AMD</p>
       <button>Buy a Ticket</button>
     </div>
   )
