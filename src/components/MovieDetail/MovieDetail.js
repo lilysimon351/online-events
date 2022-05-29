@@ -16,12 +16,11 @@ function MovieDetail() {
             console.log(err)
         })
 	}, [id])
-<<<<<<< HEAD
   return (
     <div>
       <h1>{movie.title}</h1>
       <button>To favorites</button> 
-=======
+
 
   const addToFavorites=()=>{
    
@@ -39,12 +38,11 @@ function MovieDetail() {
     <div>
       <h1>{movie.title}</h1>
       <button onClick={addToFavorites}>To favorites🧡</button> 
-<<<<<<< HEAD
->>>>>>> 9beae30245ce5f80c8dae34eef28bd181c2fe80d
+
       <img src={movie.url} alt={movie.title} />
-=======
+
       <img src={movie.posterUrl} alt={movie.title} />
->>>>>>> 37cab2f6efd4541544440f5609a6c601646aa252
+
       <p>Date: {movie.date}</p>
       <p>Ticket: {movie.ticketPrice} AMD</p>
       <button>Buy a Ticket</button>
