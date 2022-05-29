@@ -12,7 +12,7 @@ export const EN = {
 }
 export const RU = {
     movies:'ФИЛЬМЫ',
-    aboutus: 'О НАС',
+    aboutus:'О НАС',
     auth:'ВХОД',
     logOut: 'ВЫЙТИ',
     login: 'ЛОГИН',

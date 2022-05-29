@@ -17,7 +17,7 @@ const Header = () => {
       setUser(null)
     }
 
-    const {t, setActiveLanguage, activeLanguage,changeLanguage} = useTranslate()
+    const {t,changeLanguage} = useTranslate()
   
     const handleChangeLang = e => {
       setLangOption(e.target.value)
@@ -62,7 +62,7 @@ const Header = () => {
         }
      
         {
-          user && <input type='button' onClick={logout} value='LOGOUT' />
+          user && <input type='button' onClick={logout} value='LOG OUT' />
         }
         <select value={langOption} onChange={handleChangeLang}>
           <option value="AM">{t('armenian')}</option>
