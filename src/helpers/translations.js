@@ -9,6 +9,7 @@ export const EN = {
     armenian: 'Armenian',
     russian: 'Russian',
     english: 'English',
+    header_text:' ',
 }
 export const RU = {
     movies:'ФИЛЬМЫ',
@@ -20,7 +21,8 @@ export const RU = {
     'Aystex karox e linel dzer govazdy':'Здесь может быть Ваша реклама',
     armenian: 'Армянский',
     russian: 'Русский',
-    english: 'Английский'
+    english: 'Английский',
+    header_text:' ',
 }
 export const AM = {
     movies:'ՖԻԼՄԵՐ',
@@ -32,7 +34,8 @@ export const AM = {
     'Aystex karox e linel dzer govazdy':'Այստեղ կարող է լինել Ձեր գոցազդը',
     armenian: 'Հայերեն',
     russian: 'Ռուսերեն',
-    english: 'Անգլերեն'
+    english: 'Անգլերեն',
+    header_text:' ',
 }
 
 const languages = {
