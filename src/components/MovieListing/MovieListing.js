@@ -1,9 +1,9 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { baseUrl } from '../../API/Api'
-import classes from "./MovieListing.module.css"
-import { Link } from 'react-router-dom'
-import MovieCard from '../MovieCard/MovieCard'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { baseUrl } from '../../API/Api';
+import classes from "./MovieListing.module.css";
+import { Link } from 'react-router-dom';
+import MovieCard from '../MovieCard/MovieCard';
 
 function MovieListing() {
     const [movies,setMovies]=useState([])
