@@ -37,6 +37,13 @@
       "id": "fGhDja2"
     }
   ],
+  "favorites":[{
+    "id": "1",
+    "url": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/blackwidow_lob_crd_06.jpg",
+    "count": "1000 AMD",
+    "title": "Black Widow",
+    "date": "25.05.2022"
+  }],
   "movies": [
     {
       "id": "1",

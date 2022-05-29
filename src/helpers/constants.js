@@ -13,6 +13,11 @@ export const HEADER_LINKS = [
         id:'3',
         to:'auth',
         title:'AUTH'
+    },
+    {
+      id:"4",
+      to:"favorite",
+      title:"FAVORITES MOVIES"
     }
   ] 
   export const ACTIVE_ROUTES =[

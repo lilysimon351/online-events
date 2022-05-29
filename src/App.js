@@ -8,6 +8,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import MovieDetail from './components/MovieDetail/MovieDetail';
 import AuthComponent from './components/Auth/AuthComponent';
+import FavMovie from './components/FavMovie/FavMovie';
 function App() {
   return (
     <div className='app'>
@@ -17,7 +18,9 @@ function App() {
 			<Route path='aboutUs' element ={<AboutUs/>}/>
 			<Route path='auth' element ={<AuthComponent/>}/>
 			<Route path="movies/:id" element={<MovieDetail />} />
+      <Route path="favorite" element={<FavMovie/>} />
 			<Route path="*" element={<Navigate to ='home' /> }/>
+     
 		</Routes>
 		<Footer/>
       

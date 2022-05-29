@@ -19,6 +19,9 @@ function Header() {
           if(link.title ==='AUTH' && user) {
             return null
           }
+          if(link.title==="FAVORITES MOVIES" && !user){
+            return null
+          }
           return (
             <li key ={link.id}>
             <NavLink
