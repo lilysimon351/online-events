@@ -11,11 +11,13 @@ const Header = () => {
   const[langOption, setLangOption]= useState(LANGUAGES[0])
   
     const { user, setUser } = useUserInfo()
-    const logout = () => {
+  const logout = () => {
+      localStorage.removeItem('user')
+      sessionStorage.removeItem('user')
       setUser(null)
     }
 
-    const { t, changeLanguage } = useTranslate()
+    const {t, changeLanguage} = useTranslate()
   
     const handleChangeLang = e => {
       setLangOption(e.target.value)
@@ -31,7 +33,7 @@ const Header = () => {
                 return null
               }
               return (
-                <li key={link.id}>
+                <li key={link.to}> 
                   <NavLink
                     className={({ isActive }) => classNames(classes.link, {
                       [classes.active]: isActive
@@ -43,6 +45,15 @@ const Header = () => {
             })
           }
         </ul>
+
+         {
+            user && (
+              <div className={classes.headerInfo}>
+                <div className={classes.logo}>{user}</div>
+                <button className={classes.link} onClick={logout}>{t('logOut')}</button>
+              </div>
+                )
+            }
         {
           user &&
           <div className={classes.userLogo}>
@@ -51,7 +62,7 @@ const Header = () => {
         }
      
         {
-          user && <input type='button' onClick={t(logout)} value='LOGOUT' />
+          user && <input type='button' onClick={logout} value='LOGOUT' />
         }
         <select value={langOption} onChange={handleChangeLang}>
           <option value="AM">{t('armenian')}</option>
