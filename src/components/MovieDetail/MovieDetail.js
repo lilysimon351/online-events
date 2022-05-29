@@ -7,6 +7,7 @@ function MovieDetail() {
   	
 	const {id} = useParams();
 	const [movie, setMovie] = useState([]);
+ 
 	useEffect(() => {
 		axios.get(`${baseUrl}/movies/${id}`)
         .then(res=>{
@@ -16,10 +17,23 @@ function MovieDetail() {
             console.log(err)
         })
 	}, [id])
+
+  const addToFavorites=()=>{
+   
+    axios.post(`${baseUrl}/favorites`,{
+      name:movie.name,
+      url:movie.posterUrl,
+      count:movie.ticketPrice,
+      title:movie.title,
+      date:movie.date,
+      id:movie.id
+    })
+    setMovie(movie)
+  }
   return (
     <div>
       <h1>{movie.title}</h1>
-      <button>To favorites</button> 
+      <button onClick={addToFavorites}>To favorites🧡</button> 
       <img src={movie.posterUrl} alt={movie.title} />
       <p>Date: {movie.date}</p>
       <p>Ticket: {movie.ticketPrice} AMD</p>

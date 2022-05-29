@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
+import { useUserInfo } from '../../context/UserProvider';
 import classes from "./MovieCard.module.css"
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -13,9 +14,10 @@ import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 
 
 function MovieCard({movie}) {
+	const {user} = useUserInfo()
 
   return ( 
-	<Link to={`${movie.id}`} key={movie.id}>
+	<Link to={`/home/${movie.id}`} key={movie.id}>
 		<Card>
 
 			<CardMedia
@@ -41,6 +43,9 @@ function MovieCard({movie}) {
 			<CardActions disableSpacing>
 				<IconButton aria-label="add to favorites">
 					<FavoriteIcon />
+					{
+					user && <button className={classes.like}>To favorites</button> 
+					}
 				</IconButton>
 				<IconButton aria-label="buy a ticket">
 					<LocalMallRoundedIcon />

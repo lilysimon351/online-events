@@ -21,6 +21,43 @@
       "username": "alex",
       "password": "admin",
       "mail": "alex@mail.com"
+    },
+    {
+      "name": "Yegor",
+      "username": "yegor",
+      "password": "11111",
+      "mail": "yegor@mail.ru",
+      "id": "qB0cUCT"
+    },
+    {
+      "name": "Vahag",
+      "username": "vahag",
+      "password": "2222",
+      "mail": "vahag@mail.com",
+      "id": "fGhDja2"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "1",
+      "url": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/blackwidow_lob_crd_06.jpg",
+      "count": "1000 AMD",
+      "title": "Black Widow",
+      "date": "25.05.2022"
+    },
+    {
+      "url": "https://lumiere-a.akamaihd.net/v1/images/p_avengersendgame_19751_e14a0104.jpeg?region=0,0,540,810&width=480",
+      "count": "1000",
+      "title": "Avengers end game",
+      "date": "29.05.2022",
+      "id": "2"
+    },
+    {
+      "url": "https://www.universalstudios.com/uploads/18815.png",
+      "count": "1000 ",
+      "title": "The Kings Daugther",
+      "date": "29.05.2022",
+      "id": "5"
     }
   ],
   "movies": [
