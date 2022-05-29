@@ -42,3 +42,4 @@ const languages = {
 }
 
 export const getLanguage = lang => languages[lang]
+

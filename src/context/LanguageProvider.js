@@ -5,8 +5,7 @@ import {getLanguage} from "../helpers/translations";
 const LanguageContext = createContext(null)
 
 const LanguageProvider = ({children}) => {
-    const [activeLanguage, setActiveLanguage] = useState(
-        getLanguage(localStorage.getItem('language') || LANGUAGES[0])
+    const [activeLanguage, setActiveLanguage] = useState(getLanguage(localStorage.getItem('language') || LANGUAGES[0])
     )
 
     const changeLanguage = useCallback(lang => {
@@ -18,7 +17,7 @@ const LanguageProvider = ({children}) => {
         return activeLanguage[word] || word
     }, [activeLanguage])
 
-    return <LanguageContext.Provider value={{activeLanguage, changeLanguage, t}}>
+    return <LanguageContext.Provider value={{setActiveLanguage,activeLanguage, changeLanguage, t}}>
         {children}
     </LanguageContext.Provider>
 }
