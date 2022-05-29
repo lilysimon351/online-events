@@ -16,21 +16,18 @@ function FavMovie() {
         .catch(err=>{
             console.log(err)
         })
-	}, [movies])
+	}, [])
 
-  
-    
-  
   return (
     movies.map(movie=>{
       return (
-        <div>
+        <div key={movie.id}>
 
       <h1>{movie.title}</h1>
      
       <img src={movie.url} alt={movie.title} />
       <p>Date: {movie.date}</p>
-      <p>Ticket: {movie.count} </p>
+      <p>Ticket: {movie.count} AMD</p>
      <button >delete favorite</button>
     </div>)
 

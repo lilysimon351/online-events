@@ -31,8 +31,8 @@ function MovieDetail() {
    
     axios.post(`${baseUrl}/favorites`,{
       name:movie.name,
-      url:movie.url,
-      count:movie.count,
+      url:movie.posterUrl,
+      count:movie.ticketPrice,
       title:movie.title,
       date:movie.date,
       id:movie.id
@@ -43,10 +43,14 @@ function MovieDetail() {
     <div>
       <h1>{movie.title}</h1>
       <button onClick={addToFavorites}>To favorites🧡</button> 
+<<<<<<< HEAD
 >>>>>>> 9beae30245ce5f80c8dae34eef28bd181c2fe80d
       <img src={movie.url} alt={movie.title} />
+=======
+      <img src={movie.posterUrl} alt={movie.title} />
+>>>>>>> 37cab2f6efd4541544440f5609a6c601646aa252
       <p>Date: {movie.date}</p>
-      <p>Ticket: {movie.count} </p>
+      <p>Ticket: {movie.ticketPrice} AMD</p>
       <button>Buy a Ticket</button>
     </div>
   )
