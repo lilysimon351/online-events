@@ -3,11 +3,7 @@ import {Routes,Route,Navigate } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
-<<<<<<< HEAD
 import Header from './components/Header/Header';
-=======
-import Header from "./components/Header/Header"
->>>>>>> 9beae30245ce5f80c8dae34eef28bd181c2fe80d
 import AboutUs from './components/AboutUs/AboutUs';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import MovieDetail from './components/MovieDetail/MovieDetail';
@@ -18,11 +14,11 @@ import EditMovie from './components/Admin/EditMovie';
 import AuthComponent from './components/Auth/AuthComponent';
 <<<<<<< HEAD
 
-=======
+
 import FavMovie from './components/FavMovie/FavMovie';
 <<<<<<< HEAD
 >>>>>>> 9beae30245ce5f80c8dae34eef28bd181c2fe80d
-=======
+
 
 >>>>>>> 37cab2f6efd4541544440f5609a6c601646aa252
 function App() {
