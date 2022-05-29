@@ -7,10 +7,6 @@ function MovieDetail() {
   	
 	const {id} = useParams();
 	const [movie, setMovie] = useState([]);
-<<<<<<< HEAD
-=======
- 
->>>>>>> 9beae30245ce5f80c8dae34eef28bd181c2fe80d
 	useEffect(() => {
 		axios.get(`${baseUrl}/movies/${id}`)
         .then(res=>{
