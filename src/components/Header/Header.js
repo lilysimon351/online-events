@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink,Link } from "react-router-dom"
 import classes from "./Header.module.css"
 import classNames from "classnames"
 import { HEADER_LINKS } from "../../helpers/constants"
@@ -37,9 +37,9 @@ function Header() {
       </ul>
       {
         user &&   
-      <div className={classes.userLogo}>
+      <Link to ="/profile" className={classes.userLogo}>
         <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#"/>
-      </div> 
+      </Link> 
       }
      
       {

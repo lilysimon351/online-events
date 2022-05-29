@@ -5,7 +5,7 @@ import { baseUrl } from '../API/Api'
 
 export const getMoviesThunk = createAsyncThunk(
     'movie/getMoviesThunk',
-    async (_, {rejectWithValue, dispatch}) => {
+    async (id, {rejectWithValue, dispatch}) => {
         try {
             const response = await axios.get(`${baseUrl}/movies`);
 

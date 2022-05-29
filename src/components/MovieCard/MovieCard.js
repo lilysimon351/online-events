@@ -22,7 +22,7 @@ function MovieCard({movie}) {
 
 			<CardMedia
 				component="img"
-				height="270"
+				height="370"
 				image={movie.posterUrl}
 				alt={movie.title}
 			/>

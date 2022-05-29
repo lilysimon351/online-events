@@ -13,18 +13,19 @@ import AdminMovies from './components/Admin/AdminMovies.js';
 import EditMovie from './components/Admin/EditMovie';
 import AuthComponent from './components/Auth/AuthComponent';
 import FavMovie from './components/FavMovie/FavMovie';
+import Profile from './components/Profile/Profile';
 
 function App() {
   return (
     <div className='app'>
 		<Header/>
 		<Routes>
-			<Route path="/home" element={<Home/>} />
+			<Route path="home" element={<Home/>} />
 			<Route path="home/:id" element={<MovieDetail />} />
 			<Route path='aboutUs' element ={<AboutUs/>}/>
 			<Route path='auth' element ={<AuthComponent/>}/>
 			<Route path="favorite" element={<FavMovie/>} />
-
+			<Route path="profile" element={<Profile/>} />
 			<Route path="admin" element= {<Admin />}>
 				<Route index element={<AdminMovies />} />
 				<Route path="add-movie" element={<AddMovie />} />
