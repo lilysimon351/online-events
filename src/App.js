@@ -21,7 +21,6 @@ function App() {
     <div className='app'>
 		<Header/>
 		<Routes>
-<<<<<<< HEAD
 
 			<Route path='home' element={<Home/>}/> 
 			<Route path='aboutUs' element ={<AboutUs/>}/>
@@ -32,9 +31,6 @@ function App() {
 			<Route path="/home" element={<Home/>}/> 
 
 			<Route path="/home" element={<Home/>} />
-=======
-			<Route path="home" element={<Home/>} />
->>>>>>> 3a4454ed08a820f2e2bcbf0cffe6ab7c44100546
 			<Route path="home/:id" element={<MovieDetail />} />
 
 			<Route path='aboutUs' element ={<AboutUs/>}/>
