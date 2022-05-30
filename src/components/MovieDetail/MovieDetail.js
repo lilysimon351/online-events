@@ -19,10 +19,11 @@ function MovieDetail() {
   return (
     <div>
       <h1>{movie.title}</h1>
-      <button>To favorites</button> 
+      <button>To favorites</button>
+      </div>
 
-
-  const addToFavorites=()=>{
+  )
+  const ddToFavorites = () => {
    
     axios.post(`${baseUrl}/favorites`,{
       name:movie.name,
