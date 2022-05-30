@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {NavLink} from "react-router-dom";
 import classes from "./Header.module.css";
 import classNames from "classnames";
@@ -6,6 +7,13 @@ import {LANGUAGES} from "../../helpers/constants";
 import {useUserInfo} from "../../context/UserProvider";
 import {useTranslate} from "../../context/LanguageProvider";
 import {useState} from "react";
+=======
+import { NavLink,Link } from "react-router-dom"
+import classes from "./Header.module.css"
+import classNames from "classnames"
+import { HEADER_LINKS } from "../../helpers/constants"
+import { useUserInfo } from "../../context/UserProvider"
+>>>>>>> 3a4454ed08a820f2e2bcbf0cffe6ab7c44100546
 
 const Header = () => {
   const[langOption, setLangOption]= useState(LANGUAGES[0])
@@ -52,6 +60,7 @@ const Header = () => {
                <button className={classes.link} onClick={logout}>{t('log Out')}</button>
              </div>
           )
+<<<<<<< HEAD
         } */}
         {
           user &&
@@ -59,6 +68,17 @@ const Header = () => {
             <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#" />
           </div>
         }
+=======
+        })
+      }
+      </ul>
+      {
+        user &&   
+      <Link to ="/profile" className={classes.userLogo}>
+        <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#"/>
+      </Link> 
+      }
+>>>>>>> 3a4454ed08a820f2e2bcbf0cffe6ab7c44100546
      
         {
           user && <input type='button' onClick={t(logout)} value='LOG OUT'/>

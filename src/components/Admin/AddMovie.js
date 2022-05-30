@@ -29,7 +29,7 @@ function AddMovie() {
             'id': v1(),
             title: titleRef.current.value,
             description: descriptionRef.current.value,
-            date: dateRef.current.value || Date.now(),
+            date: dateRef.current.value ,
             posterUrl: posterUrlRef.current.value || "https://via.placeholder.com/350",
             ticketPrice: ticketPriceRef.current.value || 0,
             ticketAmount: ticketAmountRef.current.value || 0,

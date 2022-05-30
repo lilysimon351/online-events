@@ -13,6 +13,7 @@ import AdminMovies from './components/Admin/AdminMovies.js';
 import EditMovie from './components/Admin/EditMovie';
 import AuthComponent from './components/Auth/AuthComponent';
 import FavMovie from './components/FavMovie/FavMovie';
+import Profile from './components/Profile/Profile';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <div className='app'>
 		<Header/>
 		<Routes>
+<<<<<<< HEAD
 
 			<Route path='home' element={<Home/>}/> 
 			<Route path='aboutUs' element ={<AboutUs/>}/>
@@ -30,12 +32,15 @@ function App() {
 			<Route path="/home" element={<Home/>}/> 
 
 			<Route path="/home" element={<Home/>} />
+=======
+			<Route path="home" element={<Home/>} />
+>>>>>>> 3a4454ed08a820f2e2bcbf0cffe6ab7c44100546
 			<Route path="home/:id" element={<MovieDetail />} />
 
 			<Route path='aboutUs' element ={<AboutUs/>}/>
 			<Route path='auth' element ={<AuthComponent/>}/>
 			<Route path="favorite" element={<FavMovie/>} />
-
+			<Route path="profile" element={<Profile/>} />
 			<Route path="admin" element= {<Admin />}>
 				<Route index element={<AdminMovies />} />
 				<Route path="add-movie" element={<AddMovie />} />

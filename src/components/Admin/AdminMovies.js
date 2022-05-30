@@ -22,15 +22,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getMoviesThunk, removeMovieThunk, selectError, selectMovie, selectStatus } from '../../features/movieSlice';
 
 function AdminMovies () {
-    
+    const movies = useSelector(selectMovie);
     const dispatch = useDispatch();
     
     useEffect(()=>{
+        console.log(movies)
         dispatch(getMoviesThunk())
     }, [dispatch])
 
 
-    const movies = useSelector(selectMovie);
+    
     const status = useSelector(selectStatus);
     const error = useSelector(selectError);
 
