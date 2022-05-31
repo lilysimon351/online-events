@@ -37,21 +37,7 @@
       "id": "fGhDja2"
     }
   ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  "favorites":[{
-    "id": "1",
-    "url": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/blackwidow_lob_crd_06.jpg",
-    "count": "1000 AMD",
-    "title": "Black Widow",
-    "date": "25.05.2022"
-  }],
->>>>>>> 9beae30245ce5f80c8dae34eef28bd181c2fe80d
-  "movies": [
-=======
   "favorites": [
->>>>>>> 37cab2f6efd4541544440f5609a6c601646aa252
     {
       "id": "1",
       "url": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/blackwidow_lob_crd_06.jpg",
@@ -75,15 +61,6 @@
     }
   ],
   "movies": [
-    {
-      "id": "2",
-      "title": "",
-      "description": "",
-      "date": 1653851101746,
-      "posterUrl": "",
-      "ticketPrice": 0,
-      "ticketAmount": 0
-    },
     {
       "id": "5",
       "posterUrl": "https://www.universalstudios.com/uploads/18815.png",

@@ -13,29 +13,15 @@ import { store } from './store/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-
-  <><BrowserRouter>
-    <LanguageProvider>
-      <RouteProvider>
-        <UserProvider>
-          <App />
-        </UserProvider>
-      </RouteProvider>
-    </LanguageProvider>
-
-    <UserProvider>
-      <RouteProvider>
-        <App />
-      </RouteProvider>
-    </UserProvider>
-
-  </BrowserRouter><Provider store={store}>
-      <BrowserRouter>
-        <UserProvider>
-          <RouteProvider>
-            <App />
-          </RouteProvider>
-        </UserProvider>
-      </BrowserRouter>
-    </Provider></>
+    <Provider store={store}>
+      <LanguageProvider>
+        <BrowserRouter>
+          <UserProvider>
+            <RouteProvider>
+              <App />
+            </RouteProvider>
+          </UserProvider>
+          </BrowserRouter>
+      </LanguageProvider>
+    </Provider>
 );
