@@ -1,11 +1,18 @@
 .movieItem {
     display: inline-block;
+<<<<<<< Updated upstream
     width: 30%;
+=======
+    width: 32%;
+>>>>>>> Stashed changes
     margin: 0 1% 20px 0;
     border:2px solid black
 }
 
 .movieItem img {
     width: 100%;
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
 }
