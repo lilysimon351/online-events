@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import MovieCard from '../MovieCard/MovieCard'
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { useDispatch, useSelector } from 'react-redux'
 import { getMoviesThunk, selectError, selectMovie, selectStatus } from '../../features/movieSlice';
->>>>>>> 3a4454ed08a820f2e2bcbf0cffe6ab7c44100546
 
 function MovieListing() {
     const dispatch = useDispatch();
@@ -15,6 +11,19 @@ function MovieListing() {
     useEffect(()=>{
         dispatch(getMoviesThunk())
     }, [dispatch])
+     const addToFavorites=()=>{
+   
+    axios.post(`${baseUrl}/favorites`,{
+      name:movie.name,
+      url:movie.posterUrl,
+      count:movie.ticketPrice,
+      title:movie.title,
+      date:movie.date,
+      id:movie.id,
+      description:movie.description
+    })
+    setMovie(movie)
+  }
 
     const movies = useSelector(selectMovie);
     const status = useSelector(selectStatus);
@@ -22,60 +31,6 @@ function MovieListing() {
 
     
   return (
-<<<<<<< HEAD
-    <div className={classes.contenier}>
-      {
-          movies.map((movie)=>{
-              return (
-                  <MovieCard movie={movie} key={movie.id} />
-              )
-          })
-      }
-    </div>
-=======
-function MovieListing({onClick}) { 
-  const [movies,setMovies]=useState([])
-  useEffect(()=>{
-      fetchMovies()
-  },[])
-  const fetchMovies=()=>{
-      axios.get(`${baseUrl}/movies`)
-      .then(res=>{
-          setMovies(res.data)
-      })
-      .catch(err=>{
-          console.log(err)
-      })
-      
-  }
-  return(
-    
-      
-      <div  className={classes.contenier}>    
-                     
-     {
-      
-      movies.map((movie)=>{
-          return (
-              
-             <div className={classes.movieItem}>
-
-              <img className={classes.image} src={movie.url} alt={movie.title} />
-              <h2>{movie.title} {movie.date}</h2>
-              <h2>{movie.count}</h2>
-
-            </div>
-              
-                
-           
-          )
-      })
-  }
-      </div>      
-    
-    
->>>>>>> Stashed changes
-=======
     <Container>
         <Grid container spacing={3} sx={{margin: "2.5rem 0", }}>
             {status === 'pending' && <h2>Loading...</h2>}
@@ -96,7 +51,6 @@ function MovieListing({onClick}) {
             
         </Grid>
     </Container>
->>>>>>> 3a4454ed08a820f2e2bcbf0cffe6ab7c44100546
   )
 }
 

@@ -35,29 +35,39 @@
       "password": "2222",
       "mail": "vahag@mail.com",
       "id": "fGhDja2"
+    },
+    {
+      "name": "Vahag",
+      "username": "vahag",
+      "password": "1111",
+      "mail": "vahagvardnyan99@mail.ru",
+      "id": "luIF2Sw"
     }
   ],
   "favorites": [
-    {
-      "id": "1",
-      "url": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/blackwidow_lob_crd_06.jpg",
-      "count": "1000 AMD",
-      "title": "Black Widow",
-      "date": "25.05.2022"
-    },
-    {
-      "url": "https://lumiere-a.akamaihd.net/v1/images/p_avengersendgame_19751_e14a0104.jpeg?region=0,0,540,810&width=480",
-      "count": "1000",
-      "title": "Avengers end game",
-      "date": "29.05.2022",
-      "id": "2"
-    },
     {
       "url": "https://www.universalstudios.com/uploads/18815.png",
       "count": "1000 ",
       "title": "The Kings Daugther",
       "date": "29.05.2022",
-      "id": "5"
+      "id": "5",
+      "description": "Weve been waiting excitedly for this one since the surprise trailer reveal at San Diego Comic-Con way back in 2019 (!), and if reviews and ticket sales are to be believed, Paramount was wise to wait until it was safe for a massive theatrical release. Tom Cruise returns as Pete \"Maverick\" Mitchell, confronting his reckless past and \"need for speed,\" as he takes on the role of teacher to the next generation of trainees."
+    },
+    {
+      "url": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/6/8/5/8356586/acb59318c76683bf3dcb8b7d5e86c7c6.jpg",
+      "count": "1000",
+      "title": "Spider-Man",
+      "date": "29.05.2022",
+      "id": "6",
+      "description": "Weve been waiting excitedly for this one since the surprise trailer reveal at San Diego Comic-Con way back in 2019 (!), and if reviews and ticket sales are to be believed, Paramount was wise to wait until it was safe for a massive theatrical release. Tom Cruise returns as Pete \"Maverick\" Mitchell, confronting his reckless past and \"need for speed,\" as he takes on the role of teacher to the next generation of trainees."
+    },
+    {
+      "url": "",
+      "count": 0,
+      "title": "",
+      "date": 1653851101746,
+      "id": "2",
+      "description": ""
     }
   ],
   "movies": [

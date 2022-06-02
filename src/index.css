@@ -6,3 +6,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*, *::after, *::before {
+  position: relative;
+  box-sizing: border-box;
+
+}
+.css-xsn0m5-MuiImageList-root{
+  margin: 0;
+  
+  height: auto!important;
+  
+  overflow-y: hidden!important;
+}
+.css-o69gx8-MuiCardMedia-root{
+  max-width: 700px;
+  
+}
+
+.MuiGrid-item {
+  cursor: pointer;
+}

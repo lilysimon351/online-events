@@ -1,12 +1,11 @@
 
 import MovieListing from '../MovieListing/MovieListing'
 
-function Home({movies}) {
-   console.log(movies)
+function Home({movie}) {
+ 
   return (
       <div>
-    <MovieListing movies={movies}/>
-    
+    <MovieListing movie ={movie}/>
     </div>
     
   )

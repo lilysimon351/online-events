@@ -4,7 +4,6 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Header from "./components/Header/Header"
-<<<<<<< Updated upstream
 import AboutUs from './components/AboutUs/AboutUs';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import MovieDetail from './components/MovieDetail/MovieDetail';
@@ -21,11 +20,11 @@ function App() {
     <div className='app'>
 		<Header/>
 		<Routes>
-			<Route path="home" element={<Home/>} />
-			<Route path="home/:id" element={<MovieDetail />} />
+			<Route path="" element={<Home/>} />
+			<Route path="/:id" element={<MovieDetail />} />
 			<Route path='aboutUs' element ={<AboutUs/>}/>
 			<Route path='auth' element ={<AuthComponent/>}/>
-			<Route path="favorite" element={<FavMovie/>} />
+			<Route path="favorite" element={<FavMovie />} />
 			<Route path="profile" element={<Profile/>} />
 			<Route path="admin" element= {<Admin />}>
 				<Route index element={<AdminMovies />} />
@@ -37,22 +36,6 @@ function App() {
      
 		</Routes>
 		<Footer/>
-=======
-import MovieCard from './components/MovieCard/MovieCard';
-function App({movies}) {
-  
-console.log({movies})
-  return (
-    <div className='app'>
-      
-         <Header/>
-         <Routes>
-           <Route path="/home" element={<Home movies={movies} />}/>
-           <Route path="/movie/:imdbID" element={<MovieCard movies={movies} />}/>
-           <Route path="*" element={<PageNotFound/>}/>
-         </Routes>
-        <Footer/>
->>>>>>> Stashed changes
       
     </div>
    

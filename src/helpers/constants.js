@@ -1,7 +1,7 @@
 export const HEADER_LINKS = [
     {
       id:'1',
-      to:'home',
+      to:'/',
       title:'MOVIES'
     },
     {
@@ -15,10 +15,11 @@ export const HEADER_LINKS = [
         title:'AUTH'
     },
     {
-      id:"4",
-      to:"favorite",
-      title:"FAVORITES MOVIES"
+      id: '4',
+      to: 'favorite',
+      title: 'FAVORITES MOVIES'
     }
+  
   ] 
   export const ACTIVE_ROUTES =[
       'LOGIN',

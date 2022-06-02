@@ -7,6 +7,7 @@ import axios from "axios"
 import {baseUrl} from '../../API/Api.js'
 import { useNavigate } from "react-router-dom"
 import { useUserInfo } from "../../context/UserProvider"
+import { jsx } from "@emotion/react"
 
 const [,REGISTRATION] = ACTIVE_ROUTES
 
@@ -23,8 +24,15 @@ const Login = () => {
       .then(res =>{
         const user = res.data.find(user =>user.username === data.login && user.password ===data.password)
         if(user){
+          const userObj ={username:user.username, password:user.password}
+          if(data.save){
+            localStorage.setItem('user',JSON.stringify(userObj))
+          }
+          else{
+            sessionStorage.setItem('user',JSON.stringify(userObj))
+          }
           setUser(user)
-            navigate('../home')
+            navigate('/')
         }
         else {
           setIsAuthFailed(true)
@@ -44,6 +52,10 @@ const Login = () => {
         <label className={classes.label}>
           PASSWORD
           <input {...register('password')} type='password'/>
+        </label>
+        <label>
+          <input type='checkbox'{...register('save')}/>
+          Remember Me
         </label>
         <button className={classes.button} type="submit">LOG IN</button>
       </form>
