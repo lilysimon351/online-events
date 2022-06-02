@@ -17,7 +17,7 @@ const Header = () => {
       setUser(null)
     }
 
-    const {t,changeLanguage} = useTranslate()
+    const {t, changeLanguage} = useTranslate()
   
   const handleChangeLang = e => {
     setLangOption(e.target.value)
