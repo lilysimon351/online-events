@@ -17,7 +17,7 @@ const LanguageProvider = ({children}) => {
         return activeLanguage[word] || word
     }, [activeLanguage])
 
-    return <LanguageContext.Provider value={{setActiveLanguage,activeLanguage, changeLanguage, t}}>
+    return <LanguageContext.Provider value={{activeLanguage, changeLanguage, t}}>
         {children}
     </LanguageContext.Provider>
 }
