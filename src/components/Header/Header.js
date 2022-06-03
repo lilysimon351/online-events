@@ -5,12 +5,12 @@ import {HEADER_LINKS} from "../../helpers/constants";
 import {LANGUAGES} from "../../helpers/constants";
 import {useUserInfo} from "../../context/UserProvider";
 import {useTranslate} from "../../context/LanguageProvider";
-import {useState} from "react";
+import {useState} from "react"
 
 const Header = () => {
   const[langOption, setLangOption]= useState(LANGUAGES[0])
   
-    const { user, setUser } = useUserInfo()
+    const {user, setUser } = useUserInfo()
     const logout = () => {
       localStorage.removeItem('user')
       sessionStorage.removeItem('user')
@@ -45,21 +45,20 @@ const Header = () => {
             })
           }
         </ul>
-        {/* {
+        {
           user && (
             <div className={classes.headerInfo}>
                <div className={classes.logo}>{user}</div>
                <button className={classes.link} onClick={logout}>{t('log Out')}</button>
              </div>
           )
-        } */}
+        }
         {
           user &&
           <div className={classes.userLogo}>
             <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#" />
           </div>
-        }
-              
+        }    
           
       {
         user &&   

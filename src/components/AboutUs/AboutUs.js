@@ -1,3 +1,5 @@
+import { LANGUAGES } from "../../helpers/constants";
+import { useTranslate } from "../../context/LanguageProvider"
 
 const AboutUs = () => {
   
@@ -7,7 +9,7 @@ const AboutUs = () => {
 
   return (
     <div>
-        <h1>Aystex karox e linel dzer govazdy</h1>
+      <h1>Aystex karox e linel dzer govazdy</h1>
     </div>
   )
 }

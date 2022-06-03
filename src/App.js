@@ -16,6 +16,7 @@ import FavMovie from './components/FavMovie/FavMovie';
 import Profile from './components/Profile/Profile';
 
 
+
 function App() {
   return (
     <div className='app'>

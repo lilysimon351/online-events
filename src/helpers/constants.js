@@ -23,8 +23,4 @@ export const ACTIVE_ROUTES =[
       'REGISTER'
 ]
 
-// export const IMAGES = [
-
-
-// ]
 export const LANGUAGES = ['AM', 'RU', 'EN']
