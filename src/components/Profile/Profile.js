@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom"
 
 
 const Profile = () => {
   return (
     <div>
-      User profile 
+     <Link to ='/favorite'>FAVORITES MOVIE</Link>
+     
     </div>
   )
 }

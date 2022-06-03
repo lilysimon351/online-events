@@ -8,6 +8,8 @@ import { useUserInfo } from "../../context/UserProvider"
 function Header() {
   const {user,setUser} = useUserInfo()
    const logout = () => {
+     localStorage.removeItem('user')
+     sessionStorage.removeItem('user')
      setUser(null)
    }
 
@@ -36,7 +38,7 @@ function Header() {
       }
       </ul>
       {
-        user &&   
+        user &&  
       <Link to ="/profile" className={classes.userLogo}>
         <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#"/>
       </Link> 

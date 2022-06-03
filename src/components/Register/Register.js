@@ -37,6 +37,7 @@ const Register = () => {
           <label className={classes.label}>
             LOGIN
             <input {...register('login',{required:true,minLength:4})}  type='text'/>
+            {errors.login && <p>In the Login there was error!</p>}
           </label>
           <label className={classes.label}>
             PASSWORD

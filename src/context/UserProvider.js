@@ -4,7 +4,10 @@ const UserContext = createContext(null)
 
 const UserProvider = ({children}) =>{
 
-const [user,setUser] =useState(null)
+const [user,setUser] =useState(
+    JSON.parse(localStorage.getItem('user'))||
+    JSON.parse(sessionStorage.getItem('user'))||
+    null)
 
     return <UserContext.Provider value={{user,setUser}}>
         {children}
