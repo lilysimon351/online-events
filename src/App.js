@@ -14,51 +14,44 @@ import EditMovie from './components/Admin/EditMovie';
 import AuthComponent from './components/Auth/AuthComponent';
 import FavMovie from './components/FavMovie/FavMovie';
 import Profile from './components/Profile/Profile';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesThunk } from './features/movie/thunks/get';
-import { useUserInfo } from './context/UserProvider';
 import { getUsersThunk } from './features/user/thunks/getUsers';
+import { selectIsAdmin } from './features/user/userSlice';
 
 function App() {
+	const isAdmin = useSelector(selectIsAdmin);
 	const dispatch = useDispatch(); 
-	const dispatch2 = useDispatch()
 
-	const {user,setUser} = useUserInfo()
-	console.log('user', user)
-	const isAdmin = user?.username === 'admin' && user?.role === 'admin';
 	useEffect(() => {
-		console.log("app UF")
 		dispatch(getMoviesThunk());
-		dispatch2(getUsersThunk())
+		dispatch(getUsersThunk())
 	}, [])
 
   return (
     <div className='app'>
 		<Header/>
 		<Routes>
-			<Route path="home" element={<Home/>} />
-			<Route path="home/:id" element={<MovieDetail />} />
+			<Route path="/" element={<Home/>} />
+			<Route path="/:id" element={<MovieDetail />} />
 			<Route path='aboutUs' element ={<AboutUs/>}/>
 			<Route path='auth' element ={<AuthComponent/>}/>
 			<Route path="favorite" element={<FavMovie/>} />
 			<Route path="profile" element={<Profile/>} />
-			{/* { isAdmin && ( */}
+
+			{ isAdmin && (
 				<Route path="admin" element= {<Admin />}>
 					<Route index element={<AdminMovies />} />
 					<Route path="add-movie" element={<AddMovie />} />
 					<Route path="edit-movie" element={<EditMovie />} />
 				</Route>
-			{/* ) } */}
+			)}
 
-			
 			<Route path="*" element={<PageNotFound /> }/>
-     
 		</Routes>
 		<Footer/>
-      
     </div>
    
-
   );
 }
 

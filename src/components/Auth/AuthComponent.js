@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
-import { useAuthRoute } from "../../context/RouteProvider";
+import { useMemo } from "react";
 import {ACTIVE_ROUTES} from '../../helpers/constants'
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import { useSelector } from 'react-redux';
+import { authRouteSelector } from './../../features/authTab/authTabSlice';
 
 const [LOGIN,REGISTRATION] = ACTIVE_ROUTES
 const component ={
@@ -11,8 +12,8 @@ const component ={
 } 
 
 const AuthComponent = () => {
-    const {activeRoute} = useAuthRoute()
-    const ActiveComponent =useMemo(()=>component[activeRoute],[activeRoute])
+  const activeRoute = useSelector(authRouteSelector)
+  const ActiveComponent =useMemo(()=>component[activeRoute],[activeRoute])
 
   return (
     <>

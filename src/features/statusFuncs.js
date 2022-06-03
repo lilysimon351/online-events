@@ -2,6 +2,7 @@ export const setError = (state, action) => {
     console.log("rejected")
     state.status = 'rejected';
     state.error = action.payload;
+    console.log(state.error)
 }
 
 export const setPending = (state, action) => {

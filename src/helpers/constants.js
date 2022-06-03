@@ -5,6 +5,11 @@ export const HEADER_LINKS = [
       title:'MOVIES'
     },
     {
+      id:"6",
+      to:"admin",
+      title:"ADMIN PANEL"
+    },
+    {
       id:'2',
       to:'aboutUs',
       title:'ABOUT US'

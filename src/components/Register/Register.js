@@ -1,30 +1,37 @@
-import { useAuthRoute } from '../../context/RouteProvider'
-import {ACTIVE_ROUTES} from '../../helpers/constants'
 import {useForm} from 'react-hook-form'
-import { useState } from 'react'
 import classes from './Register.module.css'
-import { baseUrl } from '../../API/Api'
-import  axios  from 'axios'
-
-const [LOGIN] = ACTIVE_ROUTES
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUserThunk } from './../../features/user/thunks/registerUser';
+import { v4 } from 'uuid'
+import { selectAllUsers, selectError, selectStatus } from '../../features/user/userSlice'
+import { failedRegisterSelector } from '../../features/authTab/authTabSlice'
 
 const Register = () => {
 
-    const [isRegisterFailed,setIsRegisterFailed] = useState(true)
-    const {setActiveRoute} = useAuthRoute()
-    const {register,handleSubmit,formState:{errors}} = useForm()
+	const dispatch = useDispatch()
+	const allUsers = useSelector(selectAllUsers)
 
-    const onSubmit = data =>{
-      axios.post(`${baseUrl}/users`,{
-      name: data.name,
-      username: data.login,
-      password: data.password,
-      mail: data.mail
-      })
-      setIsRegisterFailed(false)
-      setTimeout(()=>{
-        setActiveRoute(LOGIN)
-      },1000)
+	const isExistUser = (username) => {
+		const index = allUsers.findIndex( item => item.username === username)
+		return (index < 0) ? false : true
+	}
+
+	const isFailedRegister = useSelector(failedRegisterSelector)
+	const error = useSelector(selectError)
+
+    const {register, handleSubmit,formState:{errors}} = useForm({
+		mode: 'onBlur'
+	})
+	
+    const onSubmit = data => {
+
+		dispatch(registerUserThunk({
+			id: v4(),
+			name: data.name,
+			username: data.login,
+			password: data.password,
+			mail: data.mail
+		}))
     }
 
     return (
@@ -36,7 +43,17 @@ const Register = () => {
           </label>
           <label className={classes.label}>
             LOGIN
-            <input {...register('login',{required:true,minLength:4})}  type='text'/>
+            <input {...register('login',{
+				required: 'this field is required',
+				minLength:{
+					value: 4,
+					message: 'Minimum 4 symbols'
+				},
+				validate: value => !isExistUser(value) || "Choose another username"
+			})}  type='text'
+			/>
+			
+			<div style={{color: 'red'}}>{errors?.login && <p>{errors.login?.message || "Error"}</p>}</div>
           </label>
           <label className={classes.label}>
             PASSWORD
@@ -53,9 +70,11 @@ const Register = () => {
           <button className={classes.button} type='submit'>REGISTER</button>
         </form>
         {
-          !isRegisterFailed && <p>Registration Completed</p>
+          !isFailedRegister && <p>Registration Completed</p>
         }
-        
+        {
+			error && <p>{error}</p>
+		}
       </div>
     )
 }

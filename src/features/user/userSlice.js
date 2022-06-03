@@ -4,9 +4,8 @@ import { getUsersThunkReducer } from "./thunks/getUsers";
 import { registerUserThunkReducer } from "./thunks/registerUser";
 
 const initialState = {
-    currentUser: localStorage.getItem('user') ||
-    sessionStorage.getItem("user") ||
-    null,
+    currentUser: localStorage.getItem('user') || false,
+    isAdmin: localStorage.getItem('isAdmin') || false,
     status: null,
     error: null,
     allUsers: [],
@@ -21,9 +20,17 @@ const userSlice = createSlice({
         },
         logInUser: (state, action) => {
             state.currentUser = action.payload.username;
+            localStorage.setItem('user', state.currentUser)
+            if( state.currentUser === 'admin' ) {
+                state.isAdmin = true
+                localStorage.setItem('isAdmin', true)
+            }
         },
         logOutUser: (state, action) => {
             state.currentUser = null
+            state.isAdmin = false
+            localStorage.removeItem('user')
+            localStorage.removeItem('isAdmin')
         },
         registerUser: (state, action) => {
             state.allUsers.push(action.payload)       
@@ -62,8 +69,9 @@ const userSlice = createSlice({
     }
 })
 
-export const selectUser = (state) => state.user.currentUser
+export const selectCurrentUser = (state) => state.user.currentUser
 export const selectAllUsers = (state) => state.user.allUsers
+export const selectIsAdmin = (state) => state.user.isAdmin;
 export const selectStatus = (state) => state.user.status;
 export const selectError = (state) => state.user.error;
 

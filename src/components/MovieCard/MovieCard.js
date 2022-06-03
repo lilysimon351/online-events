@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
-import { useUserInfo } from '../../context/UserProvider';
 import classes from "./MovieCard.module.css"
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -11,13 +10,29 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser, selectIsAdmin } from './../../features/user/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 function MovieCard({movie}) {
-	const {user} = useUserInfo()
+	
+	const navigate = useNavigate()
+	const currentUser = useSelector(selectCurrentUser)
+	const isAdmin = useSelector(selectIsAdmin)
+
+	const addToFavs = () => {
+		if(!currentUser) {
+			navigate('/auth')
+		} else if (isAdmin) {
+			return false;
+		} else {
+
+		}
+	}
 
   return ( 
-	<Link to={`/home/${movie.id}`} key={movie.id}>
+	<Link to={`/${movie.id}`} key={movie.id}>
 		<Card>
 
 			<CardMedia
@@ -41,11 +56,8 @@ function MovieCard({movie}) {
 			</CardContent>
 
 			<CardActions disableSpacing>
-				<IconButton aria-label="add to favorites">
+				<IconButton aria-label="add to favorites" onClick={addToFavs}>
 					<FavoriteIcon />
-					{
-					user && <button className={classes.like}>To favorites</button> 
-					}
 				</IconButton>
 				<IconButton aria-label="buy a ticket">
 					<LocalMallRoundedIcon />

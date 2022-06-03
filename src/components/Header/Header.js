@@ -2,48 +2,90 @@ import { NavLink,Link } from "react-router-dom"
 import classes from "./Header.module.css"
 import classNames from "classnames"
 import { HEADER_LINKS } from "../../helpers/constants"
-import { useUserInfo } from "../../context/UserProvider"
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCurrentUser, selectIsAdmin, logOutUser } from './../../features/user/userSlice';
+import App from './../../App';
 
 
 function Header() {
-  const {user,setUser} = useUserInfo()
-   const logout = () => {
-     setUser(null)
-   }
+  const currentUser = useSelector(selectCurrentUser)
+  const isAdmin = useSelector(selectIsAdmin)
+
+  const dispatch = useDispatch();
 
   return (
     <header className={classes.header}>
-      <ul className={classes.ul}>
-      {
-        HEADER_LINKS.map(link=>{
-          if(link.title ==='AUTH' && user) {
-            return null
-          }
-          if(link.title==="FAVORITES MOVIES" && !user){
-            return null
-          }
-          return (
-            <li key ={link.id}>
+      { isAdmin ? (
+        // -------------- Admin Menu ------------------
+        <ul className={classes.ul}>
+          <li>
             <NavLink
             className={({isActive})=>classNames(classes.link,{
               [classes.active]:isActive
             })}
-            to ={link.to}
-            >{link.title}</NavLink>
+            to='/admin'
+            >Admin Panel</NavLink>
+          </li>
+            
+          <li>
+            <NavLink
+            className={({isActive})=>classNames(classes.link,{
+              [classes.active]:isActive
+            })}
+            to='/'
+            >Home</NavLink>
             </li>
-          )
-        })
-      }
-      </ul>
+        </ul>
+      ) : (
+        // -------------- User Menu ------------------
+        <ul className={classes.ul}>
+          <li>
+            <NavLink
+            className={({isActive})=>classNames(classes.link,{
+              [classes.active]:isActive
+            })}
+            to='/'
+            >Best Films</NavLink>
+          </li>
+          <li>
+            <NavLink
+            className={({isActive})=>classNames(classes.link,{
+              [classes.active]:isActive
+            })}
+            to='/aboutUs'
+            >About Us</NavLink>
+          </li>
+          { currentUser && <li>
+            <NavLink
+            className={({isActive})=>classNames(classes.link,{
+              [classes.active]:isActive
+            })}
+            to='/favorite'
+            >Favorites</NavLink>
+          </li>
+          }
+          
+          { !currentUser && <li>
+            <NavLink
+            className={({isActive})=>classNames(classes.link,{
+              [classes.active]:isActive
+            })}
+            to='/auth'
+            >Auth</NavLink>
+          </li>}
+          
+        </ul>
+      )}
+      
       {
-        user &&   
+        currentUser && !isAdmin && 
       <Link to ="/profile" className={classes.userLogo}>
         <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#"/>
       </Link> 
       }
      
       {
-        user &&  <input type='button' onClick={logout} value='Logout'/>
+        currentUser &&  <input type='button' onClick={ () => dispatch(logOutUser())} value='Logout'/>
       }
       
     </header>
