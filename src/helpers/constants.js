@@ -1,19 +1,19 @@
 export const HEADER_LINKS = [
   {
     id:'1',
-    to:'home',
+    to:'MOVIES',
     title:'MOVIES'
   },
   
   {
     id:'2',
-    to:'aboutUs',
+    to:'ABOUT US',
     title:'ABOUT US'
   },
     
   {
     id: '3',
-    to:'auth',
+    to:'AUTH',
     title:'AUTH'
    }
 ] 
