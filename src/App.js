@@ -19,7 +19,7 @@ import Profile from './components/Profile/Profile';
 
 function App() {
   return (
-    <div className='app'>
+    <div className='container'>
 		<Header/>
 		<Routes>
 
