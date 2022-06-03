@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom"
 
+import { Link } from 'react-router-dom';
+import Admin from './../Admin/Admin';
 
 const Profile = () => {
   return (
     <div>
-     <Link to ='/favorite'>FAVORITES MOVIE</Link>
-     
+      User profile 
+      <Link to='/admin'>Admin</Link>
     </div>
   )
 }

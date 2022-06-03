@@ -6,7 +6,12 @@
       "role": "admin",
       "username": "admin",
       "password": "admin",
-      "mail": "admin@mail.com"
+      "mail": "admin@mail.com",
+      "favorites": [
+        1,
+        2,
+        4
+      ]
     },
     {
       "id": "2",
@@ -16,7 +21,7 @@
       "mail": "karen@mail.com"
     },
     {
-      "id": "3",
+      "id": "4",
       "name": "Alex",
       "username": "alex",
       "password": "admin",
@@ -37,107 +42,15 @@
       "id": "fGhDja2"
     }
   ],
-  "favorites": [
-    {
-      "id": "1",
-      "url": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/blackwidow_lob_crd_06.jpg",
-      "count": "1000 AMD",
-      "title": "Black Widow",
-      "date": "25.05.2022"
-    },
-    {
-      "url": "https://www.universalstudios.com/uploads/18815.png",
-      "count": "1000 ",
-      "title": "The Kings Daugther",
-      "date": "29.05.2022",
-      "id": "5"
-    },
-    {
-      "id": "qu1LGtW"
-    },
-    {
-      "id": "ql3KtxF"
-    },
-    {
-      "id": "-KE7rgL"
-    },
-    {
-      "id": "f47z9vq"
-    },
-    {
-      "id": "rw4azSD"
-    },
-    {
-      "url": "",
-      "count": 0,
-      "title": "",
-      "date": 1653851101746,
-      "id": "2"
-    }
-  ],
   "movies": [
     {
-      "id": "2",
-      "title": "",
-      "description": "",
-      "date": 1653851101746,
-      "posterUrl": "",
-      "ticketPrice": 0,
-      "ticketAmount": 0
-    },
-    {
-      "id": "5",
-      "posterUrl": "https://www.universalstudios.com/uploads/18815.png",
-      "ticketPrice": "1000 ",
-      "title": "The Kings Daugther",
-      "date": "29.05.2022",
-      "ticketAmount": 6,
-      "description": "We’ve been waiting excitedly for this one since the surprise trailer reveal at San Diego Comic-Con way back in 2019 (!), and if reviews and ticket sales are to be believed, Paramount was wise to wait until it was safe for a massive theatrical release. Tom Cruise returns as Pete \"Maverick\" Mitchell, confronting his reckless past and \"need for speed,\" as he takes on the role of teacher to the next generation of trainees."
-    },
-    {
-      "id": "6",
-      "posterUrl": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/6/8/5/8356586/acb59318c76683bf3dcb8b7d5e86c7c6.jpg",
-      "ticketPrice": "1000",
-      "title": "Spider-Man",
-      "date": "29.05.2022",
-      "ticketAmount": 6,
-      "description": "We’ve been waiting excitedly for this one since the surprise trailer reveal at San Diego Comic-Con way back in 2019 (!), and if reviews and ticket sales are to be believed, Paramount was wise to wait until it was safe for a massive theatrical release. Tom Cruise returns as Pete \"Maverick\" Mitchell, confronting his reckless past and \"need for speed,\" as he takes on the role of teacher to the next generation of trainees."
-    },
-    {
-      "id": "c75403f0-df81-11ec-8b25-65abbef94dcf",
-      "title": "wFEZRTHycvh",
-      "description": "werxthcygvjk",
-      "date": "25156-02-05",
-      "posterUrl": "http:/234h3tbrnjgkfm",
-      "ticketPrice": "852",
-      "ticketAmount": "784512"
-    },
-    {
-      "id": "31ed2390-df82-11ec-9b94-97927911cf85",
-      "title": "",
-      "description": "",
-      "date": 1653851081801,
+      "id": "a3608050-e31d-11ec-986f-61c26b6628ad",
+      "title": "title movie changed",
+      "description": "dfsdfsdf",
+      "date": "",
       "posterUrl": "https://via.placeholder.com/350",
-      "ticketPrice": 0,
-      "ticketAmount": 0
-    },
-    {
-      "id": "55209ac0-df84-11ec-8255-c35bd61043fe",
-      "title": "",
-      "description": "",
-      "date": 1653851999852,
-      "posterUrl": "https://via.placeholder.com/350",
-      "ticketPrice": 0,
-      "ticketAmount": 0
-    },
-    {
-      "id": "502d6310-df8c-11ec-bf97-ab32d9c1721d",
-      "title": "aaaaa",
-      "description": "aaaaaaaaa",
-      "date": "2022-02-22",
-      "posterUrl": "http:/234h3tbrnjgkfm",
-      "ticketPrice": "55555",
-      "ticketAmount": "5422222222"
+      "ticketPrice": "0",
+      "ticketAmount": "0"
     }
   ]
 }

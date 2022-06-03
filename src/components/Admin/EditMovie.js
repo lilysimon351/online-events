@@ -1,28 +1,44 @@
 
-import { useEffect, useRef } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { Link, Navigate } from 'react-router-dom';
-import { getSingleMovieThunk, editMovieThunk, selectError, selectMovie, selectStatus } from "../../features/movieSlice"
+import { Link, Navigate, useParams } from 'react-router-dom';
+import { selectError, selectMovies, selectStatus } from "../../features/movie/movieSlice"
+import {editMovieThunk } from "../../features/movie/thunks/edit"
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import TextField from '@mui/material/TextField';
+
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 function EditMovie() {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
 
     const dispatch = useDispatch();
+
+    const db = useSelector(selectMovies);
     
-    useEffect(()=>{
-        dispatch(getSingleMovieThunk(id))
-    }, [dispatch])
-
-
-    const movie = useSelector(selectMovie);
+    const movie = db.find( item => item.id === id) || [];
     const status = useSelector(selectStatus);
     const error = useSelector(selectError);
 
-    const titleRef = useRef();
+    
+    const [open, setOpen] = useState(false);
+
+    const handleAlertClick = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+    const titleRef = useRef();  
     const descriptionRef = useRef();
     const dateRef = useRef();
     const posterUrlRef = useRef();
@@ -34,13 +50,13 @@ function EditMovie() {
             id,
             title: titleRef.current.value,
             description: descriptionRef.current.value,
-            date: dateRef.current.value || Date.now(),
+            date: dateRef.current.value,
             posterUrl: posterUrlRef.current.value,
             ticketPrice: ticketPriceRef.current.value || 0,
             ticketAmount: ticketAmountRef.current.value || 0,
         }
         dispatch(editMovieThunk(movie))
-
+        handleAlertClick()
     }
 
     return (
@@ -127,6 +143,20 @@ function EditMovie() {
                 </Button>
             </Box>
         </form>
+                <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
+                    <div>
+                        {error &&  (
+                            <Alert onClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }}>
+                                An error occured: {error}
+                            </Alert>
+                        )}
+                        {status === 'fulfilled' && (
+                            <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
+                            The Movie was successfully edited!
+                            </Alert>
+                        )}
+                    </div>
+                </Snackbar>
                 
             </>
             
@@ -143,4 +173,4 @@ function EditMovie() {
     )
 }
 
-export default EditMovie
+export default memo(EditMovie)

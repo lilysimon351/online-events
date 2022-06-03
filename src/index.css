@@ -6,3 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+.admin-page {
+  background: white;
+  padding: 30px; 
+  min-height: calc(100vh - 122px)
+}

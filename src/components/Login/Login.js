@@ -31,7 +31,11 @@ const Login = () => {
             sessionStorage.setItem('user',JSON.stringify(userObj))
           }
           setUser(user)
+          if(user?.username === 'admin' && user?.role === 'admin') {
+            navigate('/admin')
+          } else {
             navigate('../home')
+          }
         }
         else {
           setIsAuthFailed(true)

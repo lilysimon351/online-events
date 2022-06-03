@@ -3,16 +3,16 @@ import MovieCard from '../MovieCard/MovieCard'
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { useDispatch, useSelector } from 'react-redux'
-import { getMoviesThunk, selectError, selectMovie, selectStatus } from '../../features/movieSlice';
+import { getMoviesThunk, selectError, selectMovies, selectStatus } from '../../features/movie/movieSlice';
 
 function MovieListing() {
     const dispatch = useDispatch();
     
     useEffect(()=>{
-        dispatch(getMoviesThunk())
-    }, [dispatch])
+        // dispatch(getMoviesThunk())
+    }, [])
 
-    const movies = useSelector(selectMovie);
+    const movies = useSelector(selectMovies);
     const status = useSelector(selectStatus);
     const error = useSelector(selectError);
 
