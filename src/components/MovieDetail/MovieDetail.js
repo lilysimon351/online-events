@@ -1,45 +1,59 @@
 import React, { useEffect, useState } from 'react'
-import { baseUrl } from '../../API/Api'
-import axios from 'axios'
 import { useParams } from 'react-router-dom';
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 
 function MovieDetail() {
   	
 	const {id} = useParams();
 	const [movie, setMovie] = useState([]);
   
+  
 	useEffect(() => {
-		axios.get(`${baseUrl}/movies/${id}`)
-        .then(res=>{
-            setMovie(res.data)
-        })
-        .catch(err=>{
-            console.log(err)
-        })
+		// axios.get(`${baseUrl}/movies/${id}`)
+    //     .then(res=>{
+    //         setMovie(res.data)
+    //     })
+    //     .catch(err=>{
+    //         console.log(err)
+    //     })
 	}, [id])
 
-  const addToFavorites=()=>{
-   
-    axios.post(`${baseUrl}/favorites`,{
-      name:movie.name,
-      url:movie.posterUrl,
-      count:movie.ticketPrice,
-      title:movie.title,
-      date:movie.date,
-      id:movie.id
-    })
-    setMovie(movie)
+  const addToFavs = () => {
+
   }
+
   return (
-    <div>
-      <h1>{movie.title}</h1>
-      <button onClick={addToFavorites}>To favorites🧡</button> 
-      <img src={movie.posterUrl} alt={movie.title} />
-      <p>Date: {movie.date}</p>
-      <p>Ticket: {movie.ticketPrice} AMD</p>
-      <button>Buy a Ticket</button>
-    </div>
+    <Card sx={{ display: 'flex' }} >
+    
+        <CardMedia
+        
+          component="img"
+          width="700"
+        
+          image={movie.posterUrl}
+          alt={movie.title}/>
+        <CardContent>
+          <Typography gutterBottom variant="h1" component="div">
+          {movie.title}
+           
+          </Typography>
+          <Typography variant="h4" color="text.secondary">
+          {movie.description} 
+          <p>Ticket: {movie.ticketPrice} AMD</p>
+          <button onClick={addToFavs}>To favorites🧡</button> <button>Buy a Ticket</button>
+         
+          </Typography>
+        </CardContent>
+      
+    </Card>
   )
 }
+  
+ 
 
 export default MovieDetail

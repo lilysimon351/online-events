@@ -1,10 +1,8 @@
 import { NavLink,Link } from "react-router-dom"
 import classes from "./Header.module.css"
 import classNames from "classnames"
-import { HEADER_LINKS } from "../../helpers/constants"
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrentUser, selectIsAdmin, logOutUser } from './../../features/user/userSlice';
-import App from './../../App';
 
 
 function Header() {
