@@ -7,7 +7,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 export default function Admin() {
 
 	return (
-		<div style={{background: 'white',padding: '30px'}}>
+		<div className="admin-page">
 			<Outlet />
 		</div>
 	);

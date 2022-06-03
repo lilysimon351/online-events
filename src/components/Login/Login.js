@@ -24,7 +24,11 @@ const Login = () => {
         const user = res.data.find(user =>user.username === data.login && user.password ===data.password)
         if(user){
           setUser(user)
+          if(user?.username === 'admin' && user?.role === 'admin') {
+            navigate('/admin')
+          } else {
             navigate('../home')
+          }
         }
         else {
           setIsAuthFailed(true)

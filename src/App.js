@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Routes,Route,Navigate } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
@@ -14,8 +14,24 @@ import EditMovie from './components/Admin/EditMovie';
 import AuthComponent from './components/Auth/AuthComponent';
 import FavMovie from './components/FavMovie/FavMovie';
 import Profile from './components/Profile/Profile';
+import { useDispatch } from 'react-redux';
+import { getMoviesThunk } from './features/movie/thunks/get';
+import { useUserInfo } from './context/UserProvider';
+import { getUsersThunk } from './features/user/thunks/getUsers';
 
 function App() {
+	const dispatch = useDispatch(); 
+	const dispatch2 = useDispatch()
+
+	const {user,setUser} = useUserInfo()
+	console.log('user', user)
+	const isAdmin = user?.username === 'admin' && user?.role === 'admin';
+	useEffect(() => {
+		console.log("app UF")
+		dispatch(getMoviesThunk());
+		dispatch2(getUsersThunk())
+	}, [])
+
   return (
     <div className='app'>
 		<Header/>
@@ -26,11 +42,14 @@ function App() {
 			<Route path='auth' element ={<AuthComponent/>}/>
 			<Route path="favorite" element={<FavMovie/>} />
 			<Route path="profile" element={<Profile/>} />
-			<Route path="admin" element= {<Admin />}>
-				<Route index element={<AdminMovies />} />
-				<Route path="add-movie" element={<AddMovie />} />
-				<Route path="edit-movie" element={<EditMovie />} />
-			</Route>
+			{/* { isAdmin && ( */}
+				<Route path="admin" element= {<Admin />}>
+					<Route index element={<AdminMovies />} />
+					<Route path="add-movie" element={<AddMovie />} />
+					<Route path="edit-movie" element={<EditMovie />} />
+				</Route>
+			{/* ) } */}
+
 			
 			<Route path="*" element={<PageNotFound /> }/>
      
