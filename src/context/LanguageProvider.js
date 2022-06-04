@@ -7,13 +7,14 @@ const LanguageContext = createContext(null)
 const LanguageProvider = ({children}) => {
     const [activeLanguage, setActiveLanguage] = useState(getLanguage(localStorage.getItem('language') || LANGUAGES[0])
     )
-
+console.log('activeLanguage', activeLanguage)
     const changeLanguage = useCallback(lang => {
         setActiveLanguage(getLanguage(lang))
         localStorage.setItem('language', lang.toString())
     }, [])
 
     const t = useCallback(word => {
+        console.log('activeLanguage[word]', activeLanguage[word])
         return activeLanguage[word] || word
     }, [activeLanguage])
 

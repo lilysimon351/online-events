@@ -45,17 +45,17 @@ const Header = () => {
             })
           }
         </ul>
-        {
+        {/* {
           user && (
             <div className={classes.headerInfo}>
                <div className={classes.logo}>{user}</div>
                <button className={classes.link} onClick={logout}>{t('LOG OUT')}</button>
              </div>
           )
-        }
+        } */}
         {
           user &&
-          <div className={classes.userLogo}>
+          <div className={t(classes.userLogo)}>
             <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#" />
           </div>
         }    
