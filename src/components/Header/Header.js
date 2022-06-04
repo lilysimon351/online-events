@@ -45,20 +45,20 @@ const Header = () => {
             })
           }
         </ul>
-        {/* {
+        {
           user && (
             <div className={classes.headerInfo}>
                <div className={classes.logo}>{user}</div>
                <button className={classes.link} onClick={logout}>{t('LOG OUT')}</button>
              </div>
           )
-        } */}
-        {
+        }
+        {/* {
           user &&
           <div className={t(classes.userLogo)}>
             <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#" />
           </div>
-        }    
+        }     */}
           
       {
         user &&   
@@ -67,9 +67,9 @@ const Header = () => {
       </Link> 
       }
      
-        {
+        {/* {
           user && <input type='button' onClick={t(logout)} value='LOG OUT'/>
-        }
+        } */}
         <select value={langOption} onChange={handleChangeLang}>
           <option value="AM">{t('armenian')}</option>
           <option value="RU">{t('russian')}</option>

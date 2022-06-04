@@ -9,7 +9,7 @@ export const EN = {
     armenian: 'Armenian',
     russian: 'Russian',
     english: 'English',
-    header_text:' ',
+    //header_text:' ',
 }
 export const RU = {
     movies:'ФИЛЬМЫ',
@@ -22,7 +22,7 @@ export const RU = {
     armenian: 'Армянский',
     russian: 'Русский',
     english: 'Английский',
-    header_text:' ',
+    //header_text:' ',
 }
 export const AM = {
     movies:'ՖԻԼՄԵՐ',
@@ -35,7 +35,7 @@ export const AM = {
     armenian: 'Հայերեն',
     russian: 'Ռուսերեն',
     english: 'Անգլերեն',
-    header_text:' ',
+    //header_text:' ',
 }
 
 const languages = {
