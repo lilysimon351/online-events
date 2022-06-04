@@ -20,7 +20,6 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const onSubmit = data => {
-		console.log(data)
 		const user = allUsers.find( item => item.username === data.login && item.password === data.password)
 		if( user ) {
 			dispatch(logInUser(user))
@@ -47,10 +46,10 @@ const Login = () => {
           PASSWORD
           <input {...register('password')} type='password'/>
         </label>
-        <label>
+        {/* <label>
           <input type='checkbox'{...register('save')}/>
           Remember Me
-        </label>
+        </label> */}
         <button className={classes.button} type="submit">LOG IN</button>
       </form>
 	  

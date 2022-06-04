@@ -1,4 +1,4 @@
-import { NavLink,Link } from "react-router-dom"
+import { NavLink,Link, useNavigate } from "react-router-dom"
 import classes from "./Header.module.css"
 import classNames from "classnames"
 import { useSelector, useDispatch } from 'react-redux';
@@ -10,6 +10,7 @@ function Header() {
   const isAdmin = useSelector(selectIsAdmin)
 
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   return (
     <header className={classes.header}>
@@ -83,7 +84,11 @@ function Header() {
       }
      
       {
-        currentUser &&  <input type='button' onClick={ () => dispatch(logOutUser())} value='Logout'/>
+      currentUser &&  <input type='button' onClick={ () => {
+        navigate('/');
+        dispatch(logOutUser());
+        }
+      } value='Logout'/>
       }
       
     </header>

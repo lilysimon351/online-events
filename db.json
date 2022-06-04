@@ -6,53 +6,78 @@
       "role": "admin",
       "username": "admin",
       "password": "admin",
-      "mail": "admin@mail.com"
+      "mail": "admin@mail.com",
+      "favorites": [],
+      "buyedTickets": []
     },
     {
       "id": "2",
       "name": "Karen",
       "username": "karen",
       "password": "admin",
-      "mail": "karen@mail.com"
+      "mail": "karen@mail.com",
+      "favorites": [],
+      "buyedTickets": []
     },
     {
       "id": "4",
       "name": "Alex",
       "username": "alex",
       "password": "admin",
-      "mail": "alex@mail.com"
+      "mail": "alex@mail.com",
+      "favorites": [
+        1,
+        "b58f4460-e38a-11ec-9832-63b516bf8558",
+        "d3c1fae0-e38a-11ec-9832-63b516bf8558"
+      ],
+      "buyedTickets": []
     },
     {
       "name": "Yegor",
       "username": "yegor",
       "password": "11111",
       "mail": "yegor@mail.ru",
-      "id": "qB0cUCT"
+      "id": "qB0cUCT",
+      "favorites": [],
+      "buyedTickets": []
     },
     {
       "name": "Vahag",
       "username": "vahag",
       "password": "2222",
       "mail": "vahag@mail.com",
-      "id": "fGhDja2"
-    },
-    {
-      "name": "Vahag",
-      "username": "vahag",
-      "password": "1111",
-      "mail": "vahagvardnyan99@mail.ru",
-      "id": "luIF2Sw"
+      "id": "fGhDja2",
+      "favorites": [],
+      "buyedTickets": []
     }
   ],
   "movies": [
     {
-      "id": "a3608050-e31d-11ec-986f-61c26b6628ad",
-      "title": "title movie changed",
-      "description": "dfsdfsdf",
-      "date": "",
-      "posterUrl": "https://via.placeholder.com/350",
-      "ticketPrice": "0",
-      "ticketAmount": "0"
+      "id": "b58f4460-e38a-11ec-9832-63b516bf8558",
+      "title": "Kimi",
+      "description": "",
+      "date": "2022-06-19",
+      "posterUrl": "https://kinogo.zone/uploads/posts/2022-02/1644590855_kimi-2022-movie.jpg",
+      "ticketPrice": "2000",
+      "ticketAmount": "20"
+    },
+    {
+      "id": "d3c1fae0-e38a-11ec-9832-63b516bf8558",
+      "title": "Uncharted",
+      "description": "",
+      "date": "2022-06-18",
+      "posterUrl": "https://kinobar.vip/uploads/posts/2021-12/1639667961_5.jpg",
+      "ticketPrice": "2500",
+      "ticketAmount": "20"
+    },
+    {
+      "id": "0146cfe0-e38b-11ec-9832-63b516bf8558",
+      "title": "No Exit",
+      "description": "",
+      "date": "2022-06-16",
+      "posterUrl": "https://www.kinonews.ru/insimgs/2022/poster/poster105516_1.jpg",
+      "ticketPrice": "2000",
+      "ticketAmount": "15"
     }
   ]
 }

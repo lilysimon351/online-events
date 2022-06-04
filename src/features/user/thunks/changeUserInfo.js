@@ -10,8 +10,9 @@ import { setError, setPending, setFulfilled } from '../../statusFuncs';
 export const changeUserInfoThunk = createAsyncThunk(
     'user/changeUserInfoThunk',
     async (userInfo, {rejectWithValue, dispatch}) => {
+        console.log('userInfo', userInfo.id)
         try {
-            const response = await axios.put(`${baseUrl}/users/${userInfo.id}}`, userInfo);
+            const response = await axios.put(`${baseUrl}/users/${userInfo.id}`, userInfo);
             dispatch(changeUserInfo(response.data))
         } catch(err) {
             return rejectWithValue(err.message)
@@ -27,7 +28,7 @@ export const changeUserInfoThunk = createAsyncThunk(
 
 export const changeUserInfoThunkReducer = (builder) => {
     builder
-      .addCase(changeUserInfoThunk.pending, setPending)
-      .addCase(changeUserInfoThunk.fulfilled, setFulfilled)
-      .addCase(changeUserInfoThunk.rejected, setError)
-  }
+    .addCase(changeUserInfoThunk.pending, setPending)
+    .addCase(changeUserInfoThunk.fulfilled, setFulfilled)
+    .addCase(changeUserInfoThunk.rejected, setError)
+}

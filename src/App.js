@@ -23,7 +23,7 @@ import HomeLayout from './components/Home/HomeLayout';
 function App() {
 	const isAdmin = useSelector(selectIsAdmin);
 	const dispatch = useDispatch(); 
-console.log(isAdmin)
+	
 	useEffect(() => {
 		dispatch(getMoviesThunk());
 		dispatch(getUsersThunk())

@@ -3,9 +3,16 @@
  padding: 0;
  box-sizing: border-box;
  font-family: Arial, Helvetica, sans-serif;
+ min-height: 100vh;
+ color: white
 }
 a {
+    color: rgba(255, 255, 255, 0.5);
+}
+a:hover {
+    color: white;
     text-decoration: none;
+    transition: 0.3s;
 }
 body{
     background-color: rgb(11, 57, 83);

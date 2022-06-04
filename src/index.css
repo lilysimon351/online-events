@@ -32,3 +32,13 @@ body {
 .MuiGrid-item {
   cursor: pointer;
 }
+.MuiBox-root {
+  z-index: 1;
+}
+.MuiModal-root .MuiPaper-root {
+  max-width: unset
+}
+
+.MuiModal-root  .MuiCardMedia-media  {
+  height: 320px;
+}
