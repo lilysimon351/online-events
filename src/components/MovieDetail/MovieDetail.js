@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { baseUrl } from '../../API/Api'
 import axios from 'axios'
 import { useParams } from 'react-router-dom';
+import { LANGUAGES } from "../../helpers/constants";
+import { useTranslate } from "../../context/LanguageProvider";
+import {HEADER_LINKS} from "../../helpers/constants";
 
 function MovieDetail() {
+  const {t, changeLanguage} = useTranslate()
   	
 	const {id} = useParams();
 	const [movie, setMovie] = useState([]);

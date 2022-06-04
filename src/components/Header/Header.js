@@ -48,7 +48,7 @@ const Header = () => {
         {
           user && (
             <div className={classes.headerInfo}>
-               <div className={classes.logo}>{t(user)}</div>
+               <div className={classes.logo}>{user}</div>
                <button className={classes.link} onClick={logout}>{t('LOG OUT')}</button>
              </div>
           )

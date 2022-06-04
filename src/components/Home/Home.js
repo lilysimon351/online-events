@@ -1,7 +1,8 @@
 
 import MovieListing from '../MovieListing/MovieListing';
 import { LANGUAGES } from "../../helpers/constants";
-import {useTranslate} from "../../context/LanguageProvider"
+import { useTranslate } from "../../context/LanguageProvider";
+import {HEADER_LINKS} from "../../helpers/constants";
 
 
 function Home({ movie }) {
