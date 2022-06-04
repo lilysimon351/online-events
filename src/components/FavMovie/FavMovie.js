@@ -43,14 +43,4 @@ function FavMovie({movie}) {
   );
 }
 
-
-  
-  
-    
-
-    
-    
-  
-
-
 export default FavMovie
