@@ -14,24 +14,17 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
 import React from 'react';
-import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
 
 import { useDispatch, useSelector } from 'react-redux'
-import { getMoviesThunk, removeMovieThunk, selectError, selectMovie, selectStatus } from '../../features/movieSlice';
+import { selectError, selectMovies, selectStatus } from '../../features/movie/movieSlice';
+import { removeMovieThunk } from '../../features/movie/thunks/remove';
+import Alert from '@mui/material/Alert';
 
 function AdminMovies () {
-    const movies = useSelector(selectMovie);
     const dispatch = useDispatch();
     
-    useEffect(()=>{
-        console.log(movies)
-        dispatch(getMoviesThunk())
-    }, [dispatch])
-
-
-    
+    const movies = useSelector(selectMovies);
     const status = useSelector(selectStatus);
     const error = useSelector(selectError);
 
@@ -48,9 +41,6 @@ function AdminMovies () {
 
     const [open, setOpen] = React.useState(false);
 
-    const Alert = React.forwardRef(function Alert(props, ref) {
-        return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-    });
     const handleAlertClick = () => {
         setOpen(true);
     };
@@ -69,9 +59,9 @@ function AdminMovies () {
             <Button variant="contained" onClick={handleClick} sx={{mb: 2}}>Add a Movie</Button>
             
             {status === 'pending' && <h2>Loading...</h2>}
-            {error &&  <h2>An error occured. Can't get movies</h2>}
+            
             {
-               (movies !== undefined) ? (
+               (movies !== undefined && movies.length !== 0) ? (
                    <>
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -97,13 +87,13 @@ function AdminMovies () {
                                                 </TableCell>
                                                 <TableCell align="right">
                                                     <Link to={`edit-movie?id=${movie.id}`}>
-                                                        <IconButton aria-label="add to favorites">
+                                                        <IconButton aria-label="edit movie" title="edit movie">
                                                             <EditRoundedIcon />
                                                         </IconButton>
                                                     </Link>
                                                 </TableCell>
                                                 <TableCell align="right">
-                                                    <IconButton aria-label="add to favorites" onClick={(e) => deleteMovie(e, movie.id)}>
+                                                    <IconButton aria-label="delete movie" title="delete movie" onClick={(e) => deleteMovie(e, movie.id)}>
                                                         <DeleteForeverRoundedIcon />
                                                     </IconButton>    
                                                 </TableCell>
@@ -114,14 +104,21 @@ function AdminMovies () {
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-                        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-                        The Movie was successfully deleted!
-                        </Alert>
+                    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
+                        <div>
+                            {error &&  (
+                                <Alert onClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }}>
+                                    An error occured: {error}
+                                </Alert>
+                            )}
+                            {status === 'fulfilled' && (
+                                <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
+                                The Movie was successfully deleted!
+                                </Alert>
+                            )}
+                        </div>
                     </Snackbar>
                    </>
-
-
                ) : (<h2>Sorry, there is no movies</h2>)
            
             }

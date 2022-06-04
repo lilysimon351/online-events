@@ -4,9 +4,13 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import React, { memo, useRef, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addMovieThunk, selectStatus, selectError } from '../../features/movieSlice';
+import { selectStatus, selectError } from '../../features/movie/movieSlice';
+import { addMovieThunk } from '../../features/movie/thunks/add';
 import { v1 } from 'uuid';
 import { Link } from 'react-router-dom';
+
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 
 
@@ -24,6 +28,21 @@ function AddMovie() {
     const ticketPriceRef = useRef(0);
     const ticketAmountRef = useRef(0);
 
+
+    const [open, setOpen] = useState(false);
+
+    const handleAlertClick = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
     const sendData = () => {
         const movie = {
             'id': v1(),
@@ -35,13 +54,13 @@ function AddMovie() {
             ticketAmount: ticketAmountRef.current.value || 0,
         }
         dispatch(addMovieThunk(movie))
-
-        titleRef.current.vaue = ''
-        descriptionRef.current.vaue = ''
-        dateRef.current.vaue = ''
-        posterUrlRef.current.vaue = ''
-        ticketPriceRef.current.vaue = ''
-        ticketAmountRef.current.vaue = ''
+        handleAlertClick()
+        titleRef.current.value = ''
+        descriptionRef.current.value = ''
+        dateRef.current.value = ''
+        posterUrlRef.current.value = ''
+        ticketPriceRef.current.value = ''
+        ticketAmountRef.current.value = ''
     }
   return (
     <div>
@@ -117,9 +136,21 @@ function AddMovie() {
                 </Button>
             </Box>
         </form>
-        {/* {status === 'pending' && <h2>Loading...</h2>}
-        {error &&  <h2>An error occured: {error}</h2>}
-        {status === 'fulfilled' && <h2>Movie Added</h2>} */}
+        
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
+            <div>
+                {error &&  (
+                    <Alert onClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }}>
+                        An error occured: {error}
+                    </Alert>
+                )}
+                {status === 'fulfilled' && (
+                    <Alert onClose={handleClose} variant="filled" severity="success" sx={{ width: '100%' }}>
+                    The Movie was successfully added!
+                    </Alert>
+                )}
+            </div>
+        </Snackbar>
     </div>
   )
 }

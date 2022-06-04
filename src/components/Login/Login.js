@@ -1,44 +1,37 @@
-import { useAuthRoute } from "../../context/RouteProvider"
 import {ACTIVE_ROUTES} from '../../helpers/constants'
-import {useForm} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import classes from './Login.module.css'
-import { useState } from "react"
-import axios from "axios"
-import {baseUrl} from '../../API/Api.js'
 import { useNavigate } from "react-router-dom"
-import { useUserInfo } from "../../context/UserProvider"
-import { jsx } from "@emotion/react"
+import { useDispatch, useSelector } from 'react-redux';
+import { setAuthRoute } from "../../features/authTab/authTabSlice"
+import { logInUser, selectAllUsers, selectIsAdmin } from "../../features/user/userSlice"
+import { useState } from 'react';
 
 const [,REGISTRATION] = ACTIVE_ROUTES
 
 const Login = () => {
 
-    const navigate = useNavigate()
-    const {setActiveRoute} = useAuthRoute()
+	const navigate = useNavigate()
     const {register,handleSubmit,formState:{errors}} = useForm()
-    const [isAuthFailed,setIsAuthFailed] = useState(false)
-    const {setUser} = useUserInfo()
 
-    const onSubmit = data=>{
-      axios.get(`${baseUrl}/users`)
-      .then(res =>{
-        const user = res.data.find(user =>user.username === data.login && user.password ===data.password)
-        if(user){
-          const userObj ={username:user.username, password:user.password}
-          if(data.save){
-            localStorage.setItem('user',JSON.stringify(userObj))
-          }
-          else{
-            sessionStorage.setItem('user',JSON.stringify(userObj))
-          }
-          setUser(user)
-            navigate('/')
-        }
-        else {
-          setIsAuthFailed(true)
-          console.error('USER is not found')
-        }
-      })
+	const [ loginFailed, setLoginFailed] = useState(false)
+	const allUsers = useSelector(selectAllUsers);
+
+    const dispatch = useDispatch();
+
+    const onSubmit = data => {
+		const user = allUsers.find( item => item.username === data.login && item.password === data.password)
+		if( user ) {
+			dispatch(logInUser(user))
+			
+			if( localStorage.getItem('isAdmin') ) {
+				navigate('/admin')
+			} else {
+				navigate('/')
+			}
+		} else {
+			setLoginFailed(true)
+		}
     }
 
   return (
@@ -53,13 +46,19 @@ const Login = () => {
           PASSWORD
           <input {...register('password')} type='password'/>
         </label>
-        <label>
+        {/* <label>
           <input type='checkbox'{...register('save')}/>
           Remember Me
-        </label>
+        </label> */}
         <button className={classes.button} type="submit">LOG IN</button>
       </form>
-      {isAuthFailed &&  <button onClick={() => setActiveRoute(REGISTRATION)}>Go to Registration</button>}
+	  
+      { loginFailed &&  (
+		  <>
+			<p style={{color: 'red'}}>Username or password is wrong</p>
+	  		<button onClick={() => dispatch(setAuthRoute(REGISTRATION))}>Go to Registration</button>
+		  </>
+	  ) }
      
     </div>
   )

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
-import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 const images = [
   {
@@ -13,7 +13,7 @@ const images = [
   },
   {
     url: 'https://townsquare.media/site/295/files/2021/12/attachment-2022-Movies.jpg',
-    title: 'Burgers',
+    title: 'Buyed Tickets',
     width: '50%',
   },
  

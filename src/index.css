@@ -7,6 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 *, *::after, *::before {
+  box-sizing: border-box;
+}
+.admin-page {
+  background: white;
+  padding: 30px; 
+  min-height: calc(100vh - 122px);
   position: relative;
   box-sizing: border-box;
 
@@ -25,4 +31,14 @@ body {
 
 .MuiGrid-item {
   cursor: pointer;
+}
+.MuiBox-root {
+  z-index: 1;
+}
+.MuiModal-root .MuiPaper-root {
+  max-width: unset
+}
+
+.MuiModal-root  .MuiCardMedia-media  {
+  height: 320px;
 }

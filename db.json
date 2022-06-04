@@ -6,133 +6,78 @@
       "role": "admin",
       "username": "admin",
       "password": "admin",
-      "mail": "admin@mail.com"
+      "mail": "admin@mail.com",
+      "favorites": [],
+      "buyedTickets": []
     },
     {
       "id": "2",
       "name": "Karen",
       "username": "karen",
       "password": "admin",
-      "mail": "karen@mail.com"
+      "mail": "karen@mail.com",
+      "favorites": [],
+      "buyedTickets": []
     },
     {
-      "id": "3",
+      "id": "4",
       "name": "Alex",
       "username": "alex",
       "password": "admin",
-      "mail": "alex@mail.com"
+      "mail": "alex@mail.com",
+      "favorites": [
+        1,
+        "b58f4460-e38a-11ec-9832-63b516bf8558",
+        "d3c1fae0-e38a-11ec-9832-63b516bf8558"
+      ],
+      "buyedTickets": []
     },
     {
       "name": "Yegor",
       "username": "yegor",
       "password": "11111",
       "mail": "yegor@mail.ru",
-      "id": "qB0cUCT"
+      "id": "qB0cUCT",
+      "favorites": [],
+      "buyedTickets": []
     },
     {
       "name": "Vahag",
       "username": "vahag",
       "password": "2222",
       "mail": "vahag@mail.com",
-      "id": "fGhDja2"
-    },
-    {
-      "name": "Vahag",
-      "username": "vahag",
-      "password": "1111",
-      "mail": "vahagvardnyan99@mail.ru",
-      "id": "luIF2Sw"
-    }
-  ],
-  "favorites": [
-    {
-      "url": "https://www.universalstudios.com/uploads/18815.png",
-      "count": "1000 ",
-      "title": "The Kings Daugther",
-      "date": "29.05.2022",
-      "id": "5",
-      "description": "We’ve been waiting excitedly for this one since the surprise trailer reveal at San Diego Comic-Con way back in 2019 (!), and if reviews and ticket sales are to be believed, Paramount was wise to wait until it was safe for a massive theatrical release. Tom Cruise returns as Pete \"Maverick\" Mitchell, confronting his reckless past and \"need for speed,\" as he takes on the role of teacher to the next generation of trainees."
-    },
-    {
-      "url": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/6/8/5/8356586/acb59318c76683bf3dcb8b7d5e86c7c6.jpg",
-      "count": "1000",
-      "title": "Spider-Man",
-      "date": "29.05.2022",
-      "id": "6",
-      "description": "We’ve been waiting excitedly for this one since the surprise trailer reveal at San Diego Comic-Con way back in 2019 (!), and if reviews and ticket sales are to be believed, Paramount was wise to wait until it was safe for a massive theatrical release. Tom Cruise returns as Pete \"Maverick\" Mitchell, confronting his reckless past and \"need for speed,\" as he takes on the role of teacher to the next generation of trainees."
-    },
-    {
-      "url": "",
-      "count": 0,
-      "title": "",
-      "date": 1653851101746,
-      "id": "2",
-      "description": ""
+      "id": "fGhDja2",
+      "favorites": [],
+      "buyedTickets": []
     }
   ],
   "movies": [
     {
-      "id": "2",
-      "title": "",
+      "id": "b58f4460-e38a-11ec-9832-63b516bf8558",
+      "title": "Kimi",
       "description": "",
-      "date": 1653851101746,
-      "posterUrl": "",
-      "ticketPrice": 0,
-      "ticketAmount": 0
+      "date": "2022-06-19",
+      "posterUrl": "https://kinogo.zone/uploads/posts/2022-02/1644590855_kimi-2022-movie.jpg",
+      "ticketPrice": "2000",
+      "ticketAmount": "20"
     },
     {
-      "id": "5",
-      "posterUrl": "https://www.universalstudios.com/uploads/18815.png",
-      "ticketPrice": "1000 ",
-      "title": "The Kings Daugther",
-      "date": "29.05.2022",
-      "ticketAmount": 6,
-      "description": "We’ve been waiting excitedly for this one since the surprise trailer reveal at San Diego Comic-Con way back in 2019 (!), and if reviews and ticket sales are to be believed, Paramount was wise to wait until it was safe for a massive theatrical release. Tom Cruise returns as Pete \"Maverick\" Mitchell, confronting his reckless past and \"need for speed,\" as he takes on the role of teacher to the next generation of trainees."
-    },
-    {
-      "id": "6",
-      "posterUrl": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/6/8/5/8356586/acb59318c76683bf3dcb8b7d5e86c7c6.jpg",
-      "ticketPrice": "1000",
-      "title": "Spider-Man",
-      "date": "29.05.2022",
-      "ticketAmount": 6,
-      "description": "We’ve been waiting excitedly for this one since the surprise trailer reveal at San Diego Comic-Con way back in 2019 (!), and if reviews and ticket sales are to be believed, Paramount was wise to wait until it was safe for a massive theatrical release. Tom Cruise returns as Pete \"Maverick\" Mitchell, confronting his reckless past and \"need for speed,\" as he takes on the role of teacher to the next generation of trainees."
-    },
-    {
-      "id": "c75403f0-df81-11ec-8b25-65abbef94dcf",
-      "title": "wFEZRTHycvh",
-      "description": "werxthcygvjk",
-      "date": "25156-02-05",
-      "posterUrl": "http:/234h3tbrnjgkfm",
-      "ticketPrice": "852",
-      "ticketAmount": "784512"
-    },
-    {
-      "id": "31ed2390-df82-11ec-9b94-97927911cf85",
-      "title": "",
+      "id": "d3c1fae0-e38a-11ec-9832-63b516bf8558",
+      "title": "Uncharted",
       "description": "",
-      "date": 1653851081801,
-      "posterUrl": "https://via.placeholder.com/350",
-      "ticketPrice": 0,
-      "ticketAmount": 0
+      "date": "2022-06-18",
+      "posterUrl": "https://kinobar.vip/uploads/posts/2021-12/1639667961_5.jpg",
+      "ticketPrice": "2500",
+      "ticketAmount": "20"
     },
     {
-      "id": "55209ac0-df84-11ec-8255-c35bd61043fe",
-      "title": "",
+      "id": "0146cfe0-e38b-11ec-9832-63b516bf8558",
+      "title": "No Exit",
       "description": "",
-      "date": 1653851999852,
-      "posterUrl": "https://via.placeholder.com/350",
-      "ticketPrice": 0,
-      "ticketAmount": 0
-    },
-    {
-      "id": "502d6310-df8c-11ec-bf97-ab32d9c1721d",
-      "title": "aaaaa",
-      "description": "aaaaaaaaa",
-      "date": "2022-02-22",
-      "posterUrl": "http:/234h3tbrnjgkfm",
-      "ticketPrice": "55555",
-      "ticketAmount": "5422222222"
+      "date": "2022-06-16",
+      "posterUrl": "https://www.kinonews.ru/insimgs/2022/poster/poster105516_1.jpg",
+      "ticketPrice": "2000",
+      "ticketAmount": "15"
     }
   ]
 }

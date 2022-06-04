@@ -3,29 +3,11 @@ import MovieCard from '../MovieCard/MovieCard'
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { useDispatch, useSelector } from 'react-redux'
-import { getMoviesThunk, selectError, selectMovie, selectStatus } from '../../features/movieSlice';
+import { selectError, selectMovies, selectStatus } from '../../features/movie/movieSlice';
 
 function MovieListing() {
-    const dispatch = useDispatch();
-    
-    useEffect(()=>{
-        dispatch(getMoviesThunk())
-    }, [dispatch])
-     const addToFavorites=()=>{
-   
-    axios.post(`${baseUrl}/favorites`,{
-      name:movie.name,
-      url:movie.posterUrl,
-      count:movie.ticketPrice,
-      title:movie.title,
-      date:movie.date,
-      id:movie.id,
-      description:movie.description
-    })
-    setMovie(movie)
-  }
 
-    const movies = useSelector(selectMovie);
+    const movies = useSelector(selectMovies);
     const status = useSelector(selectStatus);
     const error = useSelector(selectError);
 

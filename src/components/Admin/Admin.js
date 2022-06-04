@@ -1,13 +1,11 @@
-import { useState } from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { selectCurrentUser, selectIsAdmin } from './../../features/user/userSlice';
+import { useEffect } from "react";
 
 export default function Admin() {
-
 	return (
-		<div style={{background: 'white',padding: '30px'}}>
+		<div className="admin-page">
 			<Outlet />
 		</div>
 	);
