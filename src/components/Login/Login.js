@@ -7,10 +7,12 @@ import axios from "axios"
 import {baseUrl} from '../../API/Api.js'
 import { useNavigate } from "react-router-dom"
 import { useUserInfo } from "../../context/UserProvider"
+import {useTranslate} from "../../context/LanguageProvider";
 
 const [,REGISTRATION] = ACTIVE_ROUTES
 
 const Login = () => {
+  const {t, changeLanguage} = useTranslate()
 
     const navigate = useNavigate()
     const {setActiveRoute} = useAuthRoute()
@@ -38,11 +40,11 @@ const Login = () => {
       <form  className={classes.form}
        onSubmit={handleSubmit(onSubmit)}>
         <label className={classes.label}>
-           LOGIN
+          {t('LOGIN')}
           <input {...register('login')} type='text'/>
         </label>
         <label className={classes.label}>
-          PASSWORD
+          {t('PASSWORD')}
           <input {...register('password')} type='password'/>
         </label>
         <button className={classes.button} type="submit">LOG IN</button>

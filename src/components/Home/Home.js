@@ -1,12 +1,14 @@
 
-import MovieListing from '../MovieListing/MovieListing'
+import MovieListing from '../MovieListing/MovieListing';
+import {useTranslate} from "../../context/LanguageProvider"
 
 
-function Home({movie}) {
+function Home({ movie }) {
+  const {t, changeLanguage} = useTranslate()
  
   return (
       <div>
-    <MovieListing movie ={movie}/>
+    <MovieListing movie ={t(movie)}/>
     </div>
     
   )
