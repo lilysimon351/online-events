@@ -42,6 +42,23 @@ function MovieCard({movie}) {
 		e.stopPropagation()
 		addToFavs()
 	}
+	 const addToTicets=()=>{
+		if(!currentUser) {
+			navigate('/auth')
+		} else if (isAdmin) {
+			return false;
+		} else {
+			const userInfo = allUsers.find(item => item.username === currentUser)
+			dispatch(changeUserInfoThunk({
+				...userInfo,
+				buyedTickets: [...userInfo.buyedTickets, movie.id]
+			}))
+		}
+	 }
+	 const addToTicet=(e)=>{
+		e.stopPropagation()
+		addToTicets()
+	 }
 
 	// const style = {
 	// 	position: 'absolute',
@@ -86,7 +103,7 @@ function MovieCard({movie}) {
 				  <IconButton aria-label="add to favorites" onClick={addToFav}>
 					  <FavoriteIcon />
 				  </IconButton>
-				  <IconButton aria-label="buy a ticket" >
+				  <IconButton aria-label="buy a ticket"  onClick={addToTicet}>
 					  <LocalMallRoundedIcon />
 				  </IconButton>
 			  </CardActions>

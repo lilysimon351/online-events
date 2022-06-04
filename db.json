@@ -38,8 +38,13 @@
       "password": "11111",
       "mail": "yegor@mail.ru",
       "id": "qB0cUCT",
-      "favorites": [],
-      "buyedTickets": []
+      "favorites": [
+        "d3c1fae0-e38a-11ec-9832-63b516bf8558"
+      ],
+      "buyedTickets": [
+        "0146cfe0-e38b-11ec-9832-63b516bf8558",
+        "d3c1fae0-e38a-11ec-9832-63b516bf8558"
+      ]
     },
     {
       "name": "Vahag",

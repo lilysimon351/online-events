@@ -10,11 +10,13 @@ const images = [
     url: 'https://townsquare.media/site/295/files/2021/12/attachment-2022-Movies.jpg',
     title:<Link to ="/favorite">Favorite Movies</Link>,
     width: '50%',
+    id: 1
   },
   {
     url: 'https://townsquare.media/site/295/files/2021/12/attachment-2022-Movies.jpg',
-    title: 'Buyed Tickets',
+    title:  <Link to="/buyedTickets">Buyed Tickets</Link>,
     width: '50%',
+    id: 2
   },
  
 ];
@@ -89,7 +91,7 @@ export default function ButtonBases() {
       {images.map((image) => (
         <ImageButton
           focusRipple
-          key={image.title}
+          key={image.id}
           style={{
             width: image.width,
           }}

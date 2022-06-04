@@ -19,6 +19,7 @@ import { getMoviesThunk } from './features/movie/thunks/get';
 import { getUsersThunk } from './features/user/thunks/getUsers';
 import { selectIsAdmin } from './features/user/userSlice';
 import HomeLayout from './components/Home/HomeLayout';
+import BuyTickets from './components/Buy/BuyTickets';
 
 function App() {
 	const isAdmin = useSelector(selectIsAdmin);
@@ -40,6 +41,7 @@ function App() {
 			<Route path='aboutUs' element ={<AboutUs/>}/>
 			<Route path='auth' element ={<AuthComponent/>}/>
 			<Route path="favorite" element={<FavMovie />} />
+			<Route path="buyedTickets" element={<BuyTickets/>} />
 			<Route path="profile" element={<Profile/>} />
 
 			{ isAdmin && (
