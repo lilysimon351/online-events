@@ -4,12 +4,9 @@ import ImageList from '@mui/material/ImageList';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectMovies } from '../../features/movie/movieSlice';
 import { selectCurrentUser, selectAllUsers } from './../../features/user/userSlice';
-import SingleFav from '../FavMovie/SingleFav';
 import SingleBuy from './SingleBuy';
 
 function BuyTickets({movie}) {
-	//  --------- IMPORTANT ------------
-  	const dzuk=""
 
 	const currentUser = useSelector(selectCurrentUser)
 	const allUsers = useSelector(selectAllUsers);
@@ -38,7 +35,7 @@ function BuyTickets({movie}) {
 			}
 		</ImageList>
 		) : (
-			<p style={{textAlign: 'center'}}>You don't have any favorite movies. <br/>	<Link to='/'> Add Some!</Link></p>
+			<p style={{textAlign: 'center'}}>You don't have any Buyed Tickets. <br/>	<Link to='/'> Add Some!</Link></p>
 		)
 	}
 	</>

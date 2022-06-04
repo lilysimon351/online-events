@@ -2,13 +2,15 @@ import { NavLink,Link, useNavigate } from "react-router-dom"
 import classes from "./Header.module.css"
 import classNames from "classnames"
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCurrentUser, selectIsAdmin, logOutUser } from './../../features/user/userSlice';
+import { selectCurrentUser, selectAllUsers, selectIsAdmin, logOutUser } from './../../features/user/userSlice';
 
 
 function Header() {
+  const allUsers = useSelector(selectAllUsers)
   const currentUser = useSelector(selectCurrentUser)
+  const currentUserInfo = allUsers?.find(item => item.username === currentUser)
   const isAdmin = useSelector(selectIsAdmin)
-
+  
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -78,9 +80,14 @@ function Header() {
       
       {
         currentUser && !isAdmin && 
-      <Link to ="/profile" className={classes.userLogo}>
-        <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#"/>
-      </Link> 
+      (
+        <div className={classes.userProfile}>
+          <Link to ="/profile" className={classes.userLogo}>
+            <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="#"/>
+          </Link> 
+          <span>Balance: {currentUserInfo?.balance} AMD</span>
+        </div>
+      )
       }
      
       {

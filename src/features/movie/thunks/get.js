@@ -22,8 +22,17 @@ export const getMoviesThunk = createAsyncThunk(
     }
 )
 
-export const getMoviesThunkReducer = {
-    [getMoviesThunk.rejected]: setError,
-    [getMoviesThunk.pending]: setPending,
-    [getMoviesThunk.fulfilled]: setFulfilled,
+// export const getMoviesThunkReducer = {
+//     [getMoviesThunk.rejected]: setError,
+//     [getMoviesThunk.pending]: setPending,
+//     [getMoviesThunk.fulfilled]: setFulfilled,
+// }
+
+
+
+export const getMoviesThunkReducer = (builder) => {
+    builder
+      .addCase(getMoviesThunk.pending, setPending)
+      .addCase(getMoviesThunk.fulfilled, setFulfilled)
+      .addCase(getMoviesThunk.rejected, setError)
 }

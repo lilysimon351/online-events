@@ -7,6 +7,7 @@
       "username": "admin",
       "password": "admin",
       "mail": "admin@mail.com",
+      "balance": 5000,
       "favorites": [],
       "buyedTickets": []
     },
@@ -16,6 +17,7 @@
       "username": "karen",
       "password": "admin",
       "mail": "karen@mail.com",
+      "balance": 5000,
       "favorites": [],
       "buyedTickets": []
     },
@@ -25,12 +27,19 @@
       "username": "alex",
       "password": "admin",
       "mail": "alex@mail.com",
+      "balance": 3000,
       "favorites": [
         1,
         "b58f4460-e38a-11ec-9832-63b516bf8558",
         "d3c1fae0-e38a-11ec-9832-63b516bf8558"
       ],
-      "buyedTickets": []
+      "buyedTickets": [
+        "d3c1fae0-e38a-11ec-9832-63b516bf8558",
+        "b58f4460-e38a-11ec-9832-63b516bf8558",
+        "d3c1fae0-e38a-11ec-9832-63b516bf8558",
+        "d3c1fae0-e38a-11ec-9832-63b516bf8558",
+        "b58f4460-e38a-11ec-9832-63b516bf8558"
+      ]
     },
     {
       "name": "Yegor",
@@ -38,6 +47,7 @@
       "password": "11111",
       "mail": "yegor@mail.ru",
       "id": "qB0cUCT",
+      "balance": 5000,
       "favorites": [
         "d3c1fae0-e38a-11ec-9832-63b516bf8558"
       ],
@@ -52,6 +62,7 @@
       "password": "2222",
       "mail": "vahag@mail.com",
       "id": "fGhDja2",
+      "balance": 5000,
       "favorites": [],
       "buyedTickets": []
     }
@@ -64,7 +75,7 @@
       "date": "2022-06-19",
       "posterUrl": "https://kinogo.zone/uploads/posts/2022-02/1644590855_kimi-2022-movie.jpg",
       "ticketPrice": "2000",
-      "ticketAmount": "20"
+      "ticketAmount": 19
     },
     {
       "id": "d3c1fae0-e38a-11ec-9832-63b516bf8558",
@@ -73,7 +84,7 @@
       "date": "2022-06-18",
       "posterUrl": "https://kinobar.vip/uploads/posts/2021-12/1639667961_5.jpg",
       "ticketPrice": "2500",
-      "ticketAmount": "20"
+      "ticketAmount": 18
     },
     {
       "id": "0146cfe0-e38b-11ec-9832-63b516bf8558",

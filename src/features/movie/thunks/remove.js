@@ -18,8 +18,16 @@ export const removeMovieThunk = createAsyncThunk(
     }
 )
 
-export const removeMovieThunkReducer = {
-    [removeMovieThunk.fulfilled]: setFulfilled,
-    [removeMovieThunk.rejected]: setError,
-    [removeMovieThunk.pending]: setPending,
+// export const removeMovieThunkReducer = {
+//     [removeMovieThunk.fulfilled]: setFulfilled,
+//     [removeMovieThunk.rejected]: setError,
+//     [removeMovieThunk.pending]: setPending,
+// }
+
+
+export const removeMovieThunkReducer = (builder) => {
+    builder
+      .addCase(removeMovieThunk.pending, setPending)
+      .addCase(removeMovieThunk.fulfilled, setFulfilled)
+      .addCase(removeMovieThunk.rejected, setError)
 }

@@ -19,7 +19,9 @@ width: 45px;
 height: 45px;
 border-radius: 50%;
 }
-
+.userLogo {
+    margin-right: 10px;
+}
 .link{
     color:white;
     background-color: black;
@@ -39,4 +41,9 @@ border-radius: 50%;
     background-color: #fff;
     transition: all 0.3s;
     
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
 }

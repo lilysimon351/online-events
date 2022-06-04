@@ -35,24 +35,6 @@ const userSlice = createSlice({
         registerUser: (state, action) => {
             state.allUsers.push(action.payload)       
         },
-        addFavorite: (state, action) => {
-            // action.payload is the ID of movie
-            state.currentUser.favorites.push(action.payload)
-        },
-        deleteFavs: (state, action) => {
-            // action.payload is the ID of movie
-            state.currentUser.favorites = state.currentUser.favorites.filter( id => id !== action.payload)
-        },
-        addBalance: (state, action) => {
-            state.currentUser.balance += action.payload
-        },
-        reduceBalance: (state, action) => {
-            state.currentUser.balance -= action.payload
-        },
-        addToHistory: (state, action) => {
-            // action.payload is the ID of movie
-            state.currentUser.history.push(action.payload)
-        },
         changeUserInfo: (state, action) => {
             state.allUsers = state.allUsers.map( item => {
                 if( item.id === action.payload.id) {

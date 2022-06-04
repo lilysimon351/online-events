@@ -36,11 +36,17 @@ export const movieSlice = createSlice({
             console.log('action f', action)
         }
     },
-    extraReducers: {
-        ...addMovieThunkReducer,
-        ...editMovieThunkReducer,
-        ...getMoviesThunkReducer,
-        ...removeMovieThunkReducer
+    // extraReducers: {
+    //     ...addMovieThunkReducer,
+    //     ...editMovieThunkReducer,
+    //     ...getMoviesThunkReducer,
+    //     ...removeMovieThunkReducer
+    // }
+    extraReducers: (builder) => {
+        addMovieThunkReducer(builder)
+        editMovieThunkReducer(builder)
+        getMoviesThunkReducer(builder)
+        removeMovieThunkReducer(builder)
     }
 })
 

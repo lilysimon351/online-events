@@ -13,7 +13,11 @@ import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAllUsers, selectCurrentUser, selectIsAdmin } from './../../features/user/userSlice';
 import { changeUserInfoThunk } from '../../features/user/thunks/changeUserInfo';
+import { editMovieThunk } from './../../features/movie/thunks/edit';
 
+
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 function MovieCard({movie}) {
 	
@@ -23,6 +27,21 @@ function MovieCard({movie}) {
 	const currentUser = useSelector(selectCurrentUser)
 	const isAdmin = useSelector(selectIsAdmin)
 	const dispatch = useDispatch()
+
+
+	const [open, setOpen] = useState(false);
+
+	const handleAlertClick = () => {
+		setOpen(true);
+	};
+
+	const handleClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return;
+		}
+
+		setOpen(false);
+	};
 
 	const addToFavs = () => {
 		if(!currentUser) {
@@ -42,40 +61,34 @@ function MovieCard({movie}) {
 		e.stopPropagation()
 		addToFavs()
 	}
-	 const addToTicets=()=>{
-		if(!currentUser) {
-			navigate('/auth')
-		} else if (isAdmin) {
-			return false;
-		} else {
-			const userInfo = allUsers.find(item => item.username === currentUser)
+	const addToTicets=()=>{
+	if(!currentUser) {
+		navigate('/auth')
+	} else if (isAdmin) {
+		return false;
+	} else {
+		const userInfo = allUsers.find(item => item.username === currentUser)
+		if(+userInfo.balance > +movie.ticketPrice) {
 			dispatch(changeUserInfoThunk({
 				...userInfo,
-				buyedTickets: [...userInfo.buyedTickets, movie.id]
+				buyedTickets: [...userInfo.buyedTickets, movie.id],
+				balance: (+userInfo.balance - +movie.ticketPrice)
 			}))
+			dispatch(editMovieThunk({
+				...movie,
+				ticketAmount: +movie?.ticketAmount - 1
+			}))
+		} else {
+			setOpen(true);
 		}
-	 }
-	 const addToTicet=(e)=>{
-		e.stopPropagation()
-		addToTicets()
-	 }
 
-	// const style = {
-	// 	position: 'absolute',
-	// 	top: '50%',
-	// 	left: '50%',
-	// 	transform: 'translate(-50%, -50%)',
-	// 	width: 400,
-	// 	bgcolor: 'background.paper',
-	// 	border: '2px solid #000',
-	// 	boxShadow: 24,
-	// 	p: 4,
-	// };
+	}
+	}
+	const addToTicet=(e)=>{
+	e.stopPropagation()
+	addToTicets()
+	}
 
-	 
-	// const [open, setOpen] = React.useState(false);
-	// const handleOpen = () => setOpen(true);
-	// const handleClose = () => setOpen(false);
 
   	return ( 
 		<>
@@ -108,49 +121,13 @@ function MovieCard({movie}) {
 				  </IconButton>
 			  </CardActions>
 		  </Card>
-	  		{/* <div>
-			  <Button onClick={handleOpen}>Open modal</Button>
-			  <Modal
-				  aria-labelledby="transition-modal-title"
-				  aria-describedby="transition-modal-description"
-				  open={open}
-				  onClose={handleClose}
-				  closeAfterTransition
-				  BackdropComponent={Backdrop}
-				  BackdropProps={{
-					  timeout: 500,
-				  }}
-			  >
-				  <Fade in={open}>
-					  <Box sx={{ maxWidth: 500} }  >
-					  
-				  	<Card sx={{ maxWidth: 345 }}>
-						<CardActionArea>
-							<CardMedia
-							
-							component="img"
-							height="200"
-							image={movie.posterUrl}
-							alt={movie.title}/>
-							<CardContent>
-							<Typography gutterBottom variant="h5" component="div">
-							{movie.title}
-							
-							</Typography>
-							<Typography variant="body2" color="text.secondary">
-							{movie.description} 
-							<p>Ticket: {movie.ticketPrice} AMD</p>
-							<button onClick={addToFavs}>To favorites</button> <button >Buy a Ticket</button>
-							
-							</Typography>
-							</CardContent>
-						</CardActionArea>
-						</Card>
-						</Box>
-				  </Fade>
-			  </Modal>
-		  </div> */}
-		  
+		  <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
+            
+				<Alert onClose={handleClose} variant="filled" severity="error" sx={{ width: '100%' }}>
+					Low Balance
+				</Alert>
+                
+        </Snackbar>
 		</>
 	);
 }

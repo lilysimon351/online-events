@@ -31,8 +31,9 @@ const Register = () => {
 			username: data.login,
 			password: data.password,
 			mail: data.mail,
+      balance: 5000,
 			favorites: [],
-			buyedTickets: []
+			buyedTickets: [],
 		}))
     }
 
