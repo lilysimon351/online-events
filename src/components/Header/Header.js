@@ -65,7 +65,7 @@ function Header() {
               [classes.active]:isActive
             })}
             to='/aboutUs'
-            >About Us</NavLink>
+            >{t('ABOUT US')}</NavLink>
           </li>
           { currentUser && <li>
             <NavLink
@@ -83,7 +83,7 @@ function Header() {
               [classes.active]:isActive
             })}
             to='/auth'
-            >Auth</NavLink>
+            >{t('AUTH')}</NavLink>
           </li>}
           
         </ul>

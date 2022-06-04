@@ -8,7 +8,6 @@ import { logInUser, selectAllUsers, selectIsAdmin } from "../../features/user/us
 import { useState } from 'react';
 import { useTranslate } from "../../context/LanguageProvider";
 import { LANGUAGES } from "../../helpers/constants";
-import {HEADER_LINKS} from "../../helpers/constants"
 
 const [,REGISTRATION] = ACTIVE_ROUTES
 
@@ -55,7 +54,7 @@ const Login = () => {
           <input type='checkbox'{...register('save')}/>
           Remember Me
         </label> */}
-        <button className={classes.button} type="submit">LOG IN</button>
+        <button className={classes.button} type="submit">{t('LOG IN')}</button>
       </form>
 	  
       { loginFailed &&  (
