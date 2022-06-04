@@ -14,6 +14,7 @@ import {HEADER_LINKS} from "../../helpers/constants"
 const [,REGISTRATION] = ACTIVE_ROUTES
 
 const Login = () => {
+  
   const {t, changeLanguage} = useTranslate()
 
     const navigate = useNavigate()
