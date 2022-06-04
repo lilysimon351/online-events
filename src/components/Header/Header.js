@@ -3,9 +3,13 @@ import classes from "./Header.module.css"
 import classNames from "classnames"
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCurrentUser, selectAllUsers, selectIsAdmin, logOutUser } from './../../features/user/userSlice';
-
+import { LANGUAGES } from "../../helpers/constants";
+import {useTranslate} from "../../context/LanguageProvider";
+import { useState } from "react";
 
 function Header() {
+  const[langOption, setLangOption]= useState(LANGUAGES[0])
+
   const allUsers = useSelector(selectAllUsers)
   const currentUser = useSelector(selectCurrentUser)
   const currentUserInfo = allUsers?.find(item => item.username === currentUser)
@@ -13,6 +17,13 @@ function Header() {
   
   const dispatch = useDispatch();
   const navigate = useNavigate()
+
+  const {t, changeLanguage} = useTranslate()
+  
+  const handleChangeLang = e => {
+    setLangOption(e.target.value)
+    changeLanguage(e.target.value)
+  }
 
   return (
     <header className={classes.header}>
@@ -77,7 +88,7 @@ function Header() {
           
         </ul>
       )}
-      
+  
       {
         currentUser && !isAdmin && 
       (
@@ -91,14 +102,19 @@ function Header() {
       }
      
       {
-      currentUser &&  <input type='button' onClick={ () => {
-        navigate('/');
-        dispatch(logOutUser());
-        }
-      } value='Logout'/>
+        currentUser &&  <input type='button' onClick={ () => {
+          navigate('/');
+          dispatch(logOutUser());
+          }
+        } value={t('LOG OUT')}/>
       }
       
-    </header>
+        <select value={langOption} onChange={handleChangeLang}>
+          <option value="AM">{t('armenian')}</option>
+          <option value="RU">{t('russian')}</option>
+          <option value="EN">{t('english')}</option>
+        </select>
+      </header>
   )
 }
 

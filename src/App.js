@@ -3,7 +3,7 @@ import {Routes,Route,Navigate } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
-import Header from "./components/Header/Header"
+import Header from './components/Header/Header';
 import AboutUs from './components/AboutUs/AboutUs';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import MovieDetail from './components/MovieDetail/MovieDetail';
@@ -20,6 +20,8 @@ import { getUsersThunk } from './features/user/thunks/getUsers';
 import { selectIsAdmin } from './features/user/userSlice';
 import HomeLayout from './components/Home/HomeLayout';
 import BuyTickets from './components/Buy/BuyTickets';
+
+
 
 function App() {
 	const isAdmin = useSelector(selectIsAdmin);
@@ -56,7 +58,7 @@ function App() {
 
 			)}
 
-			<Route path="*" element={<PageNotFound /> }/>
+			<Route path="*" element={<PageNotFound /> } />
 		</Routes>
 		<Footer/>
     </div>

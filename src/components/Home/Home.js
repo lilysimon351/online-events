@@ -2,7 +2,7 @@
 
 import MovieListing from '../MovieListing/MovieListing'
 
-function Home({movie}) {
+function Home({ movie }) {
  
   return (
       <div>

@@ -104,6 +104,11 @@ function MovieCard({movie}) {
 				  title={movie.title} />
 
 			  <CardContent>
+			  	<Typography variant="body2">
+					  {movie.description}
+				  </Typography>
+				  
+				  <p></p>
 				  <Typography variant="body2">
 					  {movie.date}
 				  </Typography>

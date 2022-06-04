@@ -1,9 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import MovieCard from '../MovieCard/MovieCard'
+
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { baseUrl } from '../../API/Api';
+import classes from "./MovieListing.module.css";
+import { Link } from 'react-router-dom';
+import MovieCard from '../MovieCard/MovieCard';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { useDispatch, useSelector } from 'react-redux'
 import { selectError, selectMovies, selectStatus } from '../../features/movie/movieSlice';
+
 
 function MovieListing() {
 

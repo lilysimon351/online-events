@@ -6,10 +6,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setAuthRoute } from "../../features/authTab/authTabSlice"
 import { logInUser, selectAllUsers, selectIsAdmin } from "../../features/user/userSlice"
 import { useState } from 'react';
+import { useTranslate } from "../../context/LanguageProvider";
+import { LANGUAGES } from "../../helpers/constants";
+import {HEADER_LINKS} from "../../helpers/constants"
 
 const [,REGISTRATION] = ACTIVE_ROUTES
 
 const Login = () => {
+  
+  const {t, changeLanguage} = useTranslate()
 
 	const navigate = useNavigate()
     const {register,handleSubmit,formState:{errors}} = useForm()
@@ -39,11 +44,11 @@ const Login = () => {
       <form  className={classes.form}
        onSubmit={handleSubmit(onSubmit)}>
         <label className={classes.label}>
-           LOGIN
+          {t('LOGIN')}
           <input {...register('login')} type='text'/>
         </label>
         <label className={classes.label}>
-          PASSWORD
+          {t('PASSWORD')}
           <input {...register('password')} type='password'/>
         </label>
         {/* <label>
