@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux';
 import { selectMovies } from '../../features/movie/movieSlice';
 
 function MovieDetail() {
-  const {t, changeLanguage} = useTranslate()
   	
 	const {id} = useParams();
   const movies = useSelector(selectMovies)
