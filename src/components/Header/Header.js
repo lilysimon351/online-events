@@ -5,7 +5,7 @@ import {HEADER_LINKS} from "../../helpers/constants";
 import { LANGUAGES } from "../../helpers/constants";
 import {useUserInfo} from "../../context/UserProvider";
 import {useTranslate} from "../../context/LanguageProvider";
-import {useState} from "react"
+import { useState } from "react";
 
 const Header = () => {
   const[langOption, setLangOption]= useState(LANGUAGES[0])
