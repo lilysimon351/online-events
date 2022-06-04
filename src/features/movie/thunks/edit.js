@@ -11,20 +11,12 @@ export const editMovieThunk = createAsyncThunk(
     async (movieInfo, {rejectWithValue, dispatch}) => {
         try {
             const response = await axios.put(`${baseUrl}/movies/${movieInfo.id}`, movieInfo);
-            console.log(response)
             dispatch(editMovie(response.data))
         } catch(err) {
             return rejectWithValue(err.message)
         }
     }
 )
-
-// export const editMovieThunkReducer = {
-//     [editMovieThunk.fulfilled]: setFulfilled,
-//     [editMovieThunk.rejected]: setError,
-//     [editMovieThunk.pending]: setPending,
-// }
-
 
 export const editMovieThunkReducer = (builder) => {
     builder

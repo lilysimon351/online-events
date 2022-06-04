@@ -10,7 +10,6 @@ import { setError, setPending, setFulfilled } from '../../statusFuncs';
 export const changeUserInfoThunk = createAsyncThunk(
     'user/changeUserInfoThunk',
     async (userInfo, {rejectWithValue, dispatch}) => {
-        console.log('userInfo', userInfo.id)
         try {
             const response = await axios.put(`${baseUrl}/users/${userInfo.id}`, userInfo);
             dispatch(changeUserInfo(response.data))

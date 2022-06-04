@@ -42,3 +42,10 @@ body {
 .MuiModal-root  .MuiCardMedia-media  {
   height: 320px;
 }
+.admin-page {
+  color: black
+}
+.admin-page a {
+  color: blue;
+  text-decoration: none;
+}

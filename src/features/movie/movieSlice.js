@@ -19,29 +19,20 @@ export const movieSlice = createSlice({
             state.movies.push(action.payload)
         },
         editMovie: (state, action) => {
-            console.log('action', action)
             state.movies = state.movies.map(item => {
                 if( item.id === action.payload.id) {
                     item = action.payload
                 }
                 return item
             })
-            console.log(state.movies)
         },
         removeMovie: (state, action) => {
             state.movies = state.movies.filter( item => item.id !== action.payload)
         },
         getMovies: (state, action) => {
             state.movies = action.payload
-            console.log('action f', action)
         }
     },
-    // extraReducers: {
-    //     ...addMovieThunkReducer,
-    //     ...editMovieThunkReducer,
-    //     ...getMoviesThunkReducer,
-    //     ...removeMovieThunkReducer
-    // }
     extraReducers: (builder) => {
         addMovieThunkReducer(builder)
         editMovieThunkReducer(builder)

@@ -11,10 +11,7 @@ export const getMoviesThunk = createAsyncThunk(
     async (_, {rejectWithValue, dispatch}) => {
         try {
             const response = await axios.get(`${baseUrl}/movies`);
-            
-            console.log('dispatchBefore')
             dispatch(getMovies(response.data))
-            console.log('dispatchafter')
         } catch(err) {
             return rejectWithValue(err.message)
         }
