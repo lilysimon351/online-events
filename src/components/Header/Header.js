@@ -2,7 +2,7 @@ import {NavLink} from "react-router-dom";
 import classes from "./Header.module.css";
 import classNames from "classnames";
 import {HEADER_LINKS} from "../../helpers/constants";
-import {LANGUAGES} from "../../helpers/constants";
+import { LANGUAGES } from "../../helpers/constants";
 import {useUserInfo} from "../../context/UserProvider";
 import {useTranslate} from "../../context/LanguageProvider";
 import {useState} from "react"

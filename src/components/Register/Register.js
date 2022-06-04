@@ -4,7 +4,8 @@ import {useForm} from 'react-hook-form'
 import { useState } from 'react'
 import classes from './Register.module.css'
 import { baseUrl } from '../../API/Api'
-import  axios  from 'axios'
+import axios from 'axios'
+
 
 const [LOGIN] = ACTIVE_ROUTES
 
